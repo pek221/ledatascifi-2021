@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>&lt;no title&gt; &#8212; LeDataSciFi-2021</title>
+    <title>3.2.8. Exercises &#8212; LeDataSciFi-2021</title>
     
   <link rel="stylesheet" href="../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -55,6 +55,8 @@
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="3.2.9. Summary and Resources" href="02j_resourcesAndSum.html" />
+    <link rel="prev" title="3.2.7. Common tasks" href="02g_commontasks.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -165,7 +167,7 @@
   Textbook
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="current nav sidenav_l1">
  <li class="toctree-l1 collapsible-parent">
   <a class="reference internal" href="../01/00_Getting_Started.html">
    1. Motivation and Getting Started
@@ -259,11 +261,11 @@
   <i class="fas fa-chevron-down">
   </i>
  </li>
- <li class="toctree-l1 collapsible-parent">
+ <li class="toctree-l1 current active collapsible-parent">
   <a class="reference internal" href="00_Data_Wrangling_Intro.html">
    3. Wrangling with Data
   </a>
-  <ul class="collapse-ul">
+  <ul class="current collapse-ul">
    <li class="toctree-l2 collapsible-parent">
     <a class="reference internal" href="01_Numpy.html">
      3.1. Numpy
@@ -298,11 +300,11 @@
     <i class="fas fa-chevron-down">
     </i>
    </li>
-   <li class="toctree-l2 collapsible-parent">
+   <li class="toctree-l2 current active collapsible-parent">
     <a class="reference internal" href="02a_pandasIntro.html">
      3.2. Pandas
     </a>
-    <ul class="collapse-ul">
+    <ul class="current collapse-ul">
      <li class="toctree-l3">
       <a class="reference internal" href="02a_pandasTips.html">
        3.2.1. Tips
@@ -331,6 +333,21 @@
      <li class="toctree-l3">
       <a class="reference internal" href="02f_chains.html">
        3.2.6. Readable Chains
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="02g_commontasks.html">
+       3.2.7. Common Tasks
+      </a>
+     </li>
+     <li class="toctree-l3 current active">
+      <a class="current reference internal" href="#">
+       3.2.8. Exercises
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="02j_resourcesAndSum.html">
+       3.2.9. Summary and Resources
       </a>
      </li>
     </ul>
@@ -446,7 +463,22 @@
             <i class="fas fa-list"></i> Contents
         </div>
         <nav id="bd-toc-nav">
-            <ul class="simple nav section-nav flex-column">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-1">
+   3.2.8.1. Part 1
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-2">
+   3.2.8.2. Part 2
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-3">
+   3.2.8.3. Part 3
+  </a>
+ </li>
 </ul>
 
         </nav>
@@ -458,7 +490,124 @@
         
               <div>
                 
-  
+  <div class="section" id="exercises">
+<h1><span class="section-number">3.2.8. </span>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h1>
+<p>Try each one alone, then check and compare with the person next to you.</p>
+<p>There are many ways to solve each, so if your approaches differ, explain it to each other!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">pandas_datareader</span> <span class="k">as</span> <span class="nn">pdr</span> <span class="c1"># IF NECESSARY, from terminal: pip install pandas_datareader </span>
+<span class="kn">import</span> <span class="nn">datetime</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">start</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2017</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="c1"># you can specify start and end dates this way</span>
+<span class="n">end</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2021</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">27</span><span class="p">)</span>
+<span class="n">macro_df</span> <span class="o">=</span> <span class="n">pdr</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">DataReader</span><span class="p">([</span><span class="s1">&#39;GDP&#39;</span><span class="p">,</span><span class="s1">&#39;CPIAUCSL&#39;</span><span class="p">,</span><span class="s1">&#39;UNRATE&#39;</span><span class="p">],</span> <span class="s1">&#39;fred&#39;</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">)</span>
+
+<span class="c1"># prof demo+vocab coverage (students should type out if possible)</span>
+<span class="c1">#    vocab: df, rows, columns/vars (accessing/series), index, </span>
+<span class="c1">#    how to: access 1 var (note: series), access multiple vars</span>
+<span class="c1">#            access col names, rename (some cols, all cols via set_axis(1))</span>
+<span class="c1">#            access index</span>
+<span class="c1">#    index (reset and set)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="part-1">
+<h2><span class="section-number">3.2.8.1. </span>Part 1<a class="headerlink" href="#part-1" title="Permalink to this headline">¶</a></h2>
+<p>During class, I used this dataframe to go over <a class="reference internal" href="02b_pandasVocab.html"><span class="doc std std-doc">Pandas vocab</span></a>, and we show how to</p>
+<ul class="simple">
+<li><p>access 1 variable (note: <code class="docutils literal notranslate"><span class="pre">pd</span></code> calls this a “series” object, which is a 1D object instead of a 2D object)</p></li>
+<li><p>access multiple vars</p></li>
+<li><p>access, print, and change column names</p></li>
+<li><p>access, print, reset, and set the index</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">start</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2017</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="c1"># you can specify start and end dates this way</span>
+<span class="n">end</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2021</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">27</span><span class="p">)</span>
+<span class="n">macro_df</span> <span class="o">=</span> <span class="n">pdr</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">DataReader</span><span class="p">([</span><span class="s1">&#39;GDP&#39;</span><span class="p">,</span><span class="s1">&#39;CPIAUCSL&#39;</span><span class="p">,</span><span class="s1">&#39;UNRATE&#39;</span><span class="p">],</span> <span class="s1">&#39;fred&#39;</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Q0: Do each of the four new golden rules for initial data exploration, from the lecture.</p></li>
+<li><p>Q1: What is the second series above?</p></li>
+<li><p>Q2: What is the frequency of the series?</p></li>
+<li><p>Q3: What is the average ANNUAL GDP, based on the data?</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># do your work here</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="part-2">
+<h2><span class="section-number">3.2.8.2. </span>Part 2<a class="headerlink" href="#part-2" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Q4: Download the annual <em>real</em> gdp from 1960 to 2018 from FRED and compute the average annual percent change</p></li>
+<li><p>Q5: Compute the average gdp percent change within <em>each decade</em></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># do your work here</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="part-3">
+<h2><span class="section-number">3.2.8.3. </span>Part 3<a class="headerlink" href="#part-3" title="Permalink to this headline">¶</a></h2>
+<p>First, I’ll load January data on unemployment, the Case-Shiller housing index, and median household income in three states (CA/MI/PA).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># LOAD DATA AND CONVERT TO ANNUAL</span>
+
+<span class="n">start</span> <span class="o">=</span> <span class="mi">1990</span> <span class="c1"># pandas datareader can infer these are years</span>
+<span class="n">end</span> <span class="o">=</span> <span class="mi">2018</span>
+<span class="n">macro_data</span> <span class="o">=</span> <span class="n">pdr</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">DataReader</span><span class="p">([</span><span class="s1">&#39;CAUR&#39;</span><span class="p">,</span><span class="s1">&#39;MIUR&#39;</span><span class="p">,</span><span class="s1">&#39;PAUR&#39;</span><span class="p">,</span> <span class="c1"># unemployment </span>
+                                  <span class="s1">&#39;LXXRSA&#39;</span><span class="p">,</span><span class="s1">&#39;DEXRSA&#39;</span><span class="p">,</span><span class="s1">&#39;WDXRSA&#39;</span><span class="p">,</span> <span class="c1"># case shiller index in LA, Detroit, DC (no PA  available!)</span>
+                                  <span class="s1">&#39;MEHOINUSCAA672N&#39;</span><span class="p">,</span><span class="s1">&#39;MEHOINUSMIA672N&#39;</span><span class="p">,</span><span class="s1">&#39;MEHOINUSPAA672N&#39;</span><span class="p">],</span> <span class="c1">#  </span>
+                                 <span class="s1">&#39;fred&#39;</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">)</span>
+<span class="n">macro_data</span> <span class="o">=</span> <span class="n">macro_data</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s1">&#39;Y&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">first</span><span class="p">()</span> <span class="c1"># get&#39;s the first observation for each variable in a given year</span>
+
+<span class="c1"># CLEAN UP THE FORMATING SOMEWHAT</span>
+
+<span class="n">macro_data</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">macro_data</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">year</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2"> DATA BEFORE FORMATTING: </span><span class="se">\n\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">macro_data</span><span class="p">[:</span><span class="mi">20</span><span class="p">])</span> <span class="c1"># see how the data looks now? ugly variable names, but its an annual dataset at least</span>
+<span class="n">macro_data</span><span class="o">.</span><span class="n">columns</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">MultiIndex</span><span class="o">.</span><span class="n">from_tuples</span><span class="p">([</span>
+    <span class="p">(</span><span class="s1">&#39;Unemployment&#39;</span><span class="p">,</span><span class="s1">&#39;CA&#39;</span><span class="p">),(</span><span class="s1">&#39;Unemployment&#39;</span><span class="p">,</span><span class="s1">&#39;MI&#39;</span><span class="p">),(</span><span class="s1">&#39;Unemployment&#39;</span><span class="p">,</span><span class="s1">&#39;PA&#39;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s1">&#39;HouseIdx&#39;</span><span class="p">,</span><span class="s1">&#39;CA&#39;</span><span class="p">),(</span><span class="s1">&#39;HouseIdx&#39;</span><span class="p">,</span><span class="s1">&#39;MI&#39;</span><span class="p">),(</span><span class="s1">&#39;HouseIdx&#39;</span><span class="p">,</span><span class="s1">&#39;PA&#39;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s1">&#39;MedIncome&#39;</span><span class="p">,</span><span class="s1">&#39;CA&#39;</span><span class="p">),(</span><span class="s1">&#39;MedIncome&#39;</span><span class="p">,</span><span class="s1">&#39;MI&#39;</span><span class="p">),(</span><span class="s1">&#39;MedIncome&#39;</span><span class="p">,</span><span class="s1">&#39;PA&#39;</span><span class="p">)</span>
+    <span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2"> DATA AFTER FORMATTING: </span><span class="se">\n\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">macro_data</span><span class="p">[:</span><span class="mi">20</span><span class="p">])</span> <span class="c1"># this is a dataset that is &quot;wide&quot;, and now </span>
+                       <span class="c1"># the column variable names have 2 levels - var name, </span>
+                       <span class="c1"># and unit/state that variable applies to</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Q6: for each decade and state, report the average annual CHANGE (level, not percent) in unemployment</p></li>
+<li><p>Q7: for each decade and state, report the average annual PERCENT CHANGE in house prices and household income</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># do your work here</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
     <script type="text/x-thebe-config">
     {
         requestKernel: true,
@@ -487,6 +636,8 @@
     
     <div class='prev-next-bottom'>
         
+    <a class='left-prev' id="prev-link" href="02g_commontasks.html" title="previous page"><span class="section-number">3.2.7. </span>Common tasks</a>
+    <a class='right-next' id="next-link" href="02j_resourcesAndSum.html" title="next page"><span class="section-number">3.2.9. </span>Summary and Resources</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

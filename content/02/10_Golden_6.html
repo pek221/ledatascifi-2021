@@ -335,6 +335,21 @@
        3.2.6. Readable Chains
       </a>
      </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../03/02g_commontasks.html">
+       3.2.7. Common Tasks
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../03/02h_exercises.html">
+       3.2.8. Exercises
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../03/02j_resourcesAndSum.html">
+       3.2.9. Summary and Resources
+      </a>
+     </li>
     </ul>
     <i class="fas fa-chevron-down">
     </i>
@@ -477,12 +492,12 @@
 <div class="section" id="folders-separated-by-function-part-1">
 <h2><span class="section-number">2.5.1. </span>Folders separated by function - part 1<a class="headerlink" href="#folders-separated-by-function-part-1" title="Permalink to this headline">¶</a></h2>
 <p>I’ve split the project into two sub-directories: “build” (whose function is to build the sample from the raw data inputs) and “analysis”. These are two-sub tasks of any data project, and here, I’ve chosen to treat them as different functions and thus they get different folders (<strong>Rule 3.A</strong>).</p>
-<p><img alt="" src="content/02/img/dir-top.png" /></p>
+<p><img alt="" src="../../_images/dir-top.png" /></p>
 </div>
 <div class="section" id="folders-separated-by-function-part-2">
 <h2><span class="section-number">2.5.2. </span>Folders separated by function - part 2<a class="headerlink" href="#folders-separated-by-function-part-2" title="Permalink to this headline">¶</a></h2>
 <p>The build folder takes “inputs”, which are processed by files inside “code”, and places the analysis sample (now explicitly created!) in “output”. Notice the inputs and outputs are clearly separated! (<strong>Rule 3.B</strong>) Temp files are created along the way, but are not “output”.</p>
-<p><img alt="" src="content/02/img/dir-build.png" /></p>
+<p><img alt="" src="../../_images/dir-build.png" /></p>
 <p><strong>Also, notice the new file <code class="docutils literal notranslate"><span class="pre">run_directory.py</span></code>.</strong> It very quickly and plainly documents how to run the entire code in the “build” project (<strong>Rule 1.B</strong>), and makes it easy to do so every time (<strong>Rule 2.B</strong>) before you push it back to the master repo on GitHub (<strong>Rule 2.A</strong>). <code class="docutils literal notranslate"><span class="pre">run_directory.py</span></code> is so simple, it is self-documenting (<strong>Rule 6.C</strong>).</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># to create DataSample.csv:</span>
 <span class="n">clean_slate</span><span class="p">()</span> <span class="c1"># deletes all temp files and all output files</span>

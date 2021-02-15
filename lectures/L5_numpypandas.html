@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hello everyone! &#8212; LeDataSciFi-2021</title>
+    <title>Hello! Today: &#8212; LeDataSciFi-2021</title>
     
   <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -53,8 +53,6 @@
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
 
@@ -394,7 +392,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/lectures/L2_jupyterlab.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/lectures/L5_numpypandas.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -414,10 +412,10 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/LeDataSciFi/ledatascifi-2021/issues/new?title=Issue%20on%20page%20%2Flectures/L2_jupyterlab.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/LeDataSciFi/ledatascifi-2021/issues/new?title=Issue%20on%20page%20%2Flectures/L5_numpypandas.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        <a class="edit-button" href="https://github.com/LeDataSciFi/ledatascifi-2021/edit/main/lectures/L2_jupyterlab.ipynb"><button
+        <a class="edit-button" href="https://github.com/LeDataSciFi/ledatascifi-2021/edit/main/lectures/L5_numpypandas.ipynb"><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
     </div>
@@ -437,7 +435,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/LeDataSciFi/ledatascifi-2021/main?urlpath=lab/tree/lectures/L2_jupyterlab.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/LeDataSciFi/ledatascifi-2021/main?urlpath=lab/tree/lectures/L5_numpypandas.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../_static/images/logo_binder.svg"
@@ -445,7 +443,7 @@
         
         
         
-        <a class="colab-button" href="https://colab.research.google.com/github/LeDataSciFi/ledatascifi-2021/blob/main/lectures/L2_jupyterlab.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+        <a class="colab-button" href="https://colab.research.google.com/github/LeDataSciFi/ledatascifi-2021/blob/main/lectures/L5_numpypandas.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
                 title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
                     src="../_static/images/logo_colab.png"
                     alt="Interact on Colab">Colab</button></a>
@@ -465,81 +463,72 @@
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#big-picture">
-   Big picture
+  <a class="reference internal nav-link" href="#notes">
+   Notes:
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#a-quick-tour-of-jupyter-lab">
-   A quick tour of Jupyter Lab
+  <a class="reference internal nav-link" href="#peer-reviews">
+   Peer reviews
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#our-first-notebook-file">
-   Our first notebook file
+  <a class="reference internal nav-link" href="#asgn1-review-demo-working-through-a-few-problems">
+   ASGN1 review demo + working through a few problems
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#numpy-summary">
+   Numpy summary
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#enough-already-let-s-code">
-     Enough already, let’s “code”!
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#step-1-create-the-file">
-       Step 1: Create the file
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#step-2-modifying-our-notebook">
-       Step 2: Modifying our notebook
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#stop-let-me-show-you-something-important">
-   Stop! Let me show you something important!
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#back-to-using-jupyter-lab">
-     Back to using Jupyter Lab
+    <a class="reference internal nav-link" href="#np-reference">
+     NP reference
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#fin-for-that-walkthrough">
-   FIN for that walkthrough
+  <a class="reference internal nav-link" href="#in-class-np-examples">
+   In-class NP examples
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#tidying-up">
-   Tidying up
+  <a class="reference internal nav-link" href="#one-in-class-np-example">
+   One in-class NP example
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#summary-part-1">
-   Summary Part 1
+  <a class="reference internal nav-link" href="#pandas">
+   PANDAS
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#more-practice">
-     More practice:
+     More practice
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#next-class">
+     Next class
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#student-demos">
+     Student demos
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#before-next-time">
-   Before next time
+  <a class="reference internal nav-link" href="#summary">
+   Summary
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#two-great-opportunities">
-     Two great opportunities:
+    <a class="reference internal nav-link" href="#shut-down-restart-your-kernal-and-run-code-save-all-open-files-close-jlab-commit-and-push-your-class-notes-repo">
+     Shut down: Restart your kernal and run code, save all open files, close JLab, commit and push your class notes repo.
     </a>
    </li>
   </ul>
@@ -555,258 +544,218 @@
         
               <div>
                 
-  <div class="section" id="hello-everyone">
-<h1>Hello everyone!<a class="headerlink" href="#hello-everyone" title="Permalink to this headline">¶</a></h1>
-<p>Our plan for the day:</p>
-<ol>
-<li><p>Any issues with the tasks, or questions before we begin?</p>
-<p><em><strong>Reminder: Save code we do in class to your repo for participation credit</strong></em></p>
-</li>
-<li><p>Big picture</p></li>
-<li><p>JLab tour</p></li>
-<li><p>Learning by doing</p>
+  <div class="section" id="hello-today">
+<h1>Hello! Today:<a class="headerlink" href="#hello-today" title="Permalink to this headline">¶</a></h1>
 <ol class="simple">
-<li><p>Opening Jupyter Lab and exploring the interface</p></li>
-<li><p>Creating our first file and exploring “notebooks”</p></li>
-<li><p>Practice</p></li>
+<li><p>Before class: Fetch your class notes repo and the lecture repo, and open JLab to the class notes repo</p></li>
+<li><p>Discussing ASGN1 and peer reviews</p></li>
+<li><p>A brief discussion of <code class="docutils literal notranslate"><span class="pre">numpy</span></code></p></li>
+<li><p>Getting dirty with <code class="docutils literal notranslate"><span class="pre">pandas</span></code></p></li>
 </ol>
-</li>
-</ol>
-<div class="section" id="big-picture">
-<h2>Big picture<a class="headerlink" href="#big-picture" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="notes">
+<h2>Notes:<a class="headerlink" href="#notes" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">python</span></code> is a programming language</p></li>
-<li><p>.<code class="docutils literal notranslate"><span class="pre">py</span></code> files are text files that exclusively contain python code.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">py</span></code> files can not show results - you have to output any graphs or tables to new files.</p></li>
-</ul>
-<p>That last feature is a bummer. <strong>There must be a better way!</strong></p>
-<p><img alt="" src="https://media.giphy.com/media/xsATxBQfeKHCg/giphy.gif" /></p>
-<p><img alt="" src="https://media.giphy.com/media/zvYnqgajTM6MU/giphy.gif" /></p>
-<p><img alt="" src="https://media.giphy.com/media/3oEduNF7DlpxgcHVJe/giphy.gif" /></p>
-<p>Put that in the Guggenheim.</p>
-<p><img alt="" src="https://media.giphy.com/media/B4fRSZgj8XUOY/source.gif" /></p>
-<p>Enter notebook files!</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">.ipynb</span></code> (“notebook”) files mix python code with formatted markdown text and the output from code!</p></li>
-<li><p>→ better analysis! (“reproducible, reusable, and shareable”)</p></li>
-</ul>
-<p>And <strong>Jupyter Lab</strong> is how we will make our Jupyter notebooks</p>
-</div>
-<div class="section" id="a-quick-tour-of-jupyter-lab">
-<h2>A quick tour of Jupyter Lab<a class="headerlink" href="#a-quick-tour-of-jupyter-lab" title="Permalink to this headline">¶</a></h2>
-<p>Open Jupyter Lab:</p>
-<ul class="simple">
-<li><p>Windows: Open Anaconda Prompt and type <code class="docutils literal notranslate"><span class="pre">jupyter</span> <span class="pre">lab</span></code> and hit enter</p></li>
-<li><p>Mac: Open a terminal window and type <code class="docutils literal notranslate"><span class="pre">jupyter</span> <span class="pre">lab</span></code> and hit enter</p></li>
-</ul>
-<p>OK, what are we looking at?</p>
-<ul class="simple">
-<li><p>This is a browser based editor</p></li>
-<li><p>Notice your prompt/terminal is running in the background</p>
-<ul>
-<li><p><em>HINT</em> : If you need another prompt/terminal to do something else, just open a second one</p></li>
-</ul>
-</li>
-</ul>
-<p><strong>Now, let me give you a little tour (just watch me!)</strong></p>
-<p>I’ll cover…</p>
-<ul class="simple">
-<li><p>The left sidebar</p>
-<ul>
-<li><p><strong>The file browser:</strong> Navigating to my project folder</p></li>
-<li><p>Kernels: A list of running code</p></li>
-<li><p>Commands: Has a lot of actions, and short cuts are listed</p></li>
-<li><p>Extensions: VERY useful to make JLab more powerful</p></li>
-</ul>
-</li>
-<li><p>The main work area</p>
-<ul>
-<li><p>you arrange documents (notebooks, text files, etc.) and other activities (terminals, code consoles, etc.) into panels</p></li>
-<li><p>each panel can have many tabs open</p></li>
-</ul>
-</li>
+<li><p>Please fill out a short check in survey: <a class="reference external" href="https://forms.gle/3C56TPPJsWukKw318">https://forms.gle/3C56TPPJsWukKw318</a></p></li>
+<li><p>I’m going to try to record the afternoon session today</p></li>
 </ul>
 </div>
-<div class="section" id="our-first-notebook-file">
-<h2>Our first notebook file<a class="headerlink" href="#our-first-notebook-file" title="Permalink to this headline">¶</a></h2>
-<p><strong>But first!</strong> Let’s put <a class="reference external" href="https://ledatascifi.github.io/ledatascifi-2021/content/assignments/howto_do.html#working-on-assignments-projects-taking-notes">tips on working</a> into practice:</p>
+<div class="section" id="peer-reviews">
+<h2>Peer reviews<a class="headerlink" href="#peer-reviews" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>You’ll get invites to review two classmate’s submissions today, accept both</p>
 <ul class="simple">
-<li><p>Open github desktop</p></li>
-<li><p>“Fetch” your class notes repo (probably nothing changed, but its a good habit!)</p></li>
+<li><p>A chance to learn and teach!</p></li>
 </ul>
-<p><strong>Now we are ready to code!</strong></p>
-<p>Before each class starts, you should have already</p>
+</li>
+<li><p>For each, open the answer key in the repo and click on the link to the survey</p>
 <ul class="simple">
-<li><p>“fetched” your class notes repo</p></li>
-<li><p>opened JLab to that folder</p></li>
+<li><p>Most of the review can be done looking at the repo online, but…</p></li>
 </ul>
-<p>And at the end of each class,</p>
+</li>
+</ol>
+<p>⭐⭐⭐ <strong>MOST IMPORTANT: You must clone the repo to your computer and run the code ON YOUR COMPUTER</strong> (The essential ingredient of collaborative coding, and a fundamental takeaway from class) ⭐⭐⭐</p>
+<p>If you have questions while doing reviews</p>
 <ul class="simple">
-<li><p>save all open code files,</p></li>
-<li><p>close JLab (and the terminal running it)</p></li>
-<li><p>commit and push your Class Notes repo</p></li>
+<li><p>if it is a general question (“Is XYZ correct?”): &#64;classmates, but don’t identify the reviewee</p></li>
+<li><p>if it is sensitive: email Jason (and CC me)</p></li>
 </ul>
-<div class="section" id="enough-already-let-s-code">
-<h3>Enough already, let’s “code”!<a class="headerlink" href="#enough-already-let-s-code" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="step-1-create-the-file">
-<h4>Step 1: Create the file<a class="headerlink" href="#step-1-create-the-file" title="Permalink to this headline">¶</a></h4>
-<ol>
-<li><p>create a folder inside your class notes folder called notes</p>
-<p>right click in file explorer pane and select “New Folder”, then name it “notes”</p>
+</div>
+<div class="section" id="asgn1-review-demo-working-through-a-few-problems">
+<h2>ASGN1 review demo + working through a few problems<a class="headerlink" href="#asgn1-review-demo-working-through-a-few-problems" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>Volunteer? I’ll submit a full feedback form for your assignment</p>
+<ul class="simple">
+<li><p>Else I have an anon folder I can use</p></li>
+</ul>
 </li>
-<li><p>create a “” file</p>
-<p>Hit  the <span class="math notranslate nohighlight">\(+\)</span> button, then under “Notebook”, click on “Python 3”</p>
-</li>
-<li><p>rename that file “Using JupyterLab-Basics”</p>
-<p>right click the file in the file browser, or the tab the file opened in, and pick “rename”</p>
-</li>
-<li><p>save it (CTRL+S on windows, Apple+S on mac)</p></li>
+<li><p>Poll - which questions from the assignment should we discuss the solution to?</p></li>
 </ol>
 </div>
-<div class="section" id="step-2-modifying-our-notebook">
-<h4>Step 2: Modifying our notebook<a class="headerlink" href="#step-2-modifying-our-notebook" title="Permalink to this headline">¶</a></h4>
-<p>Let’s type some Python in the notebook:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">L</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span> <span class="c1"># define a list with 1-5</span>
-<span class="n">L</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>      <span class="c1"># &quot;pop&quot; removes an element</span>
-<span class="n">L</span>             <span class="c1"># if the last element of a cell is an object</span>
-              <span class="c1"># executing the cell will print it, like this:</span>
+<div class="section" id="numpy-summary">
+<h2>Numpy summary<a class="headerlink" href="#numpy-summary" title="Permalink to this headline">¶</a></h2>
+<p>By convention: <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">numpy</span> <span class="pre">as</span> <span class="pre">np</span></code></p>
+<p>Why is there a chapter in the book on it?</p>
+<ol class="simple">
+<li><p>(<code class="docutils literal notranslate"><span class="pre">np</span></code> 🤝 Speed) + (<code class="docutils literal notranslate"><span class="pre">np</span></code> 🤝 <code class="docutils literal notranslate"><span class="pre">pandas</span></code>) = (<code class="docutils literal notranslate"><span class="pre">pandas</span></code> 🤝 speed)</p></li>
+<li><p>(<code class="docutils literal notranslate"><span class="pre">np</span></code> 🤝 Extra fncs) + (<code class="docutils literal notranslate"><span class="pre">np</span></code> 🤝 <code class="docutils literal notranslate"><span class="pre">pandas</span></code>) = (<code class="docutils literal notranslate"><span class="pre">pandas</span></code> 🤝 Extra fncs)</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">np.nan</span></code>, <code class="docutils literal notranslate"><span class="pre">np.median()</span></code>, <code class="docutils literal notranslate"><span class="pre">np.percentile()</span></code>, etc</p></li>
+<li><p>near C speeds on execution, written with python simplicity</p></li>
+</ul>
+</li>
+</ol>
+<p>From the <a class="reference external" href="https://numpy.org/doc/stable/user/whatisnumpy.html">official documentation</a></p>
+<blockquote>
+<div><p>NumPy is the fundamental package for scientific computing in Python. It provides</p>
+<ul class="simple">
+<li><p>a multidimensional array object,</p></li>
+<li><p>various derived objects (such as masked arrays and matrices),
+-an assortment of routines for fast operations on arrays, including mathematical, logical, shape manipulation, sorting, selecting, I/O, discrete Fourier transforms, basic linear algebra, basic statistical operations, random simulation and much more.</p></li>
+</ul>
+<p>[A lot of Data Sci packages are built using NumPy. In order to efficiently use them… one also needs to know how to use NumPy arrays.]</p>
+</div></blockquote>
+<div class="section" id="np-reference">
+<h3>NP reference<a class="headerlink" href="#np-reference" title="Permalink to this headline">¶</a></h3>
+<p><span class="xref myst">numpy.org/doc</span> has pages with</p>
+<ul class="simple">
+<li><p>the “absolute basics” start here (very good)</p></li>
+<li><p>quickstart guide (next)</p></li>
+<li><p>how-to section</p></li>
+</ul>
+<p>What numpy skills should you focus on?</p>
+<ol class="simple">
+<li><p>Indexing (v similar to Py, but some extra features)</p></li>
+<li><p>“Masking” (useful for filters in pandas, and creating variables)</p></li>
+<li><p>What functions are available</p></li>
+<li><p>If you use anything “random” in your code, (basically) always set a seed!</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">np</span></code> has updated <code class="docutils literal notranslate"><span class="pre">np.random</span></code> and seeding has changed. <a class="reference external" href="https://numpy.org/doc/stable/reference/random/bit_generators/index.html#seeding-and-entropy">See the doc’s seeding page</a></p></li>
+</ul>
+</li>
+</ol>
+<p><em>Note: We will basically only use 1D arrays (simplifies things)</em></p>
+</div>
+</div>
+<div class="section" id="in-class-np-examples">
+<h2>In-class NP examples<a class="headerlink" href="#in-class-np-examples" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>Indexing looks the same (at least for 1D arrays):</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">myray</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">15</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;myray:&quot;</span><span class="p">,</span> <span class="n">myray</span><span class="p">)</span> 
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;slice:&quot;</span><span class="p">,</span> <span class="n">myray</span><span class="p">[</span><span class="mi">6</span><span class="p">:</span><span class="mi">11</span><span class="p">])</span> <span class="c1"># pick the 6-10th elements</span>
+<span class="c1"># quick try: pick the odd elements</span>
 </pre></div>
 </div>
-<ul class="simple">
-<li><p>Do you notice the syntax coloring?</p></li>
-<li><p>The hashtags/pound signs are the “comment signal”. They tell Python to ignore everything to the right of it on that line, so that you can write notes to anyone looking at the code.</p></li>
-</ul>
-<p>Ok, let’s run that code! Hit <kbd> ctrl </kbd>+ <kbd> enter</kbd></p>
-<p>Do you see the number to the left of it? That helps you track the order in which each cell was run.</p>
-<p>Hit <kbd> ctrl </kbd>+ <kbd> enter</kbd>  again. See the number change?</p>
 </div>
-</div>
-</div>
-<div class="section" id="stop-let-me-show-you-something-important">
-<h2>Stop! Let me show you something important!<a class="headerlink" href="#stop-let-me-show-you-something-important" title="Permalink to this headline">¶</a></h2>
-<p><strong>The point of code is that someone can open the file, run it from beginning to end, and get the same results you did!</strong></p>
-<p>You should check that your files work like you think they do every 15-30 minutes and EVERY TIME you think you are done by</p>
-<ol class="simple">
-<li><p>Clicking the “Kernel” menu, then, “Restart Kernel and clear all outputs”.</p></li>
-<li><p>Then rerun the code: Open the “run” menu, then “run all cells”</p></li>
-</ol>
-<p>Let me show you an example of why this is important:</p>
-<p>Let me show you an example of why this is important:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">=</span><span class="mi">2</span>                                     <span class="c1"># run first</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Coffee costs&quot;</span><span class="p">,</span><span class="n">a</span><span class="o">+</span><span class="mi">3</span><span class="p">,</span><span class="s2">&quot;dollars&quot;</span><span class="p">)</span>     <span class="c1"># run second, run fourth</span>
-<span class="n">a</span><span class="o">=</span><span class="mi">4</span>                                     <span class="c1"># run third</span>
-<span class="c1"># someone opens this file of yours and sees that it says coffee is $7</span>
-<span class="c1"># after running these, the code says coffee is only $5!!!</span>
-<span class="c1"># this is a disaster!</span>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>myray: [ 0  1  2  3  4  5  6  7  8  9 10 11 12 13 14]
+slice: [ 6  7  8  9 10]
 </pre></div>
 </div>
-<p>This example seems silly, but I saw it on 20-30% of assignments for the first month last year.</p>
-<p>The easiest way to see if this might happen: Just look at all the #s to the left of code blocks. They should be in order from 1 up.</p>
-<div class="section" id="back-to-using-jupyter-lab">
-<h3>Back to using Jupyter Lab<a class="headerlink" href="#back-to-using-jupyter-lab" title="Permalink to this headline">¶</a></h3>
-<ol class="simple">
-<li><p>Add a new cell below by <em><strong>clicking</strong></em> the plus button on this panel.</p></li>
-<li><p>Add a new cell below by <em><strong>keyboard shortcut</strong></em>. To do that, we need a quick digression on Jupyter’s modal editing system. Let’s look at the textbook.</p></li>
-</ol>
-<p>The modal behavior of the Jupyter notebook is a little tricky at first but very efficient when you get used to it.</p>
-<p>So, click <kbd> ESC </kbd> to switch to command mode, then <kbd> B </kbd> to insert a cell <strong>B</strong> elow.</p>
- <ol start="3">
-  <li>Switch the inserted cell to markdown (via the markdown/code drop down box) and write several lines.</li>
-  <li>Split the markdown cell in half and insert a cell in the middle of those halves. </li>
-     <ul>
-         <li><s>How do you split a cell in half?</s> Better question: Where do you look for an answer about how to do that? </li>
-         <li><b>This is a good time to explore!</b> Take the "user interface tour" under help, then look through the various menus, check out the Keyboard Shortcuts (under the help menu), and then search through the "command palette" (which looks like a keyboard icon at the right side of the Notebook Toolbar). <b>The command palette is very useful because you can search for commands!</b> Return to the shortcut menu and command palette often!!!</li>
-    </ul>     
- </ol>
-  <ol start="5">
-  <li>Switch that middle cell to "code" mode via keyboard shortcuts. </li>
-  <li>Add a cell at the bottom of the notebook, and then delete it: <code>ESC</code> to go to command mode and then <code>D</code>,<code>D</code> (hit the "d" button twice).</li>    
-</ol> </div>
 </div>
-<div class="section" id="fin-for-that-walkthrough">
-<h2>FIN for that walkthrough<a class="headerlink" href="#fin-for-that-walkthrough" title="Permalink to this headline">¶</a></h2>
-<ol class="simple">
-<li><p>How did we do?</p>
-<ul class="simple">
-<li><p>Thumb up emoji if you kept up all the way through</p></li>
-<li><p>Thumb down if you’re quite lost</p></li>
-<li><p>Any other emoji for “in the middle”</p></li>
-</ul>
-</li>
-<li><p>Obviously, we will learn much more going forward, but you have enough to play around with Jupyter now. I <strong>highly</strong> recommend doing some introductory Python tutorials over the weekend. The</p></li>
-</ol>
 </div>
-<div class="section" id="tidying-up">
-<h2>Tidying up<a class="headerlink" href="#tidying-up" title="Permalink to this headline">¶</a></h2>
-<p>Earlier, I said to</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Code must run from beginning to end and produce the same thing every time
-- Restart the kernal and clear output
-- Run all cells
+</div>
+<div class="section" id="one-in-class-np-example">
+<h2>One in-class NP example<a class="headerlink" href="#one-in-class-np-example" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>Indexing looks the same (at least for 1D arrays)</p></li>
+<li><p>Booleans and masking</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># create a random vector (every run of this --&gt; diff #s)</span>
+<span class="kn">from</span> <span class="nn">numpy.random</span> <span class="kn">import</span> <span class="n">default_rng</span>
+<span class="n">rg</span> <span class="o">=</span> <span class="n">default_rng</span><span class="p">()</span>
+<span class="n">myray</span> <span class="o">=</span> <span class="n">rg</span><span class="o">.</span><span class="n">standard_normal</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;myray:&quot;</span><span class="p">,</span> <span class="n">myray</span><span class="p">)</span> 
 
-And at the end of each class, 
-- save all open code files, 
-- close JLab (and the terminal running it)
-- commit and push your Class Notes repo
+<span class="c1"># Q: how can you always select the positive elements from this?</span>
+<span class="c1"># prof demo: booleans, a single condition--&gt;bool, </span>
+<span class="c1">#            using booleans on an array/list, </span>
+<span class="c1">#            indexing/filtering via booleans as &quot;masks&quot;</span>
+<span class="c1">#            then answer</span>
 </pre></div>
 </div>
-<p>Let’s do that now!</p>
 </div>
-<div class="section" id="summary-part-1">
-<h2>Summary Part 1<a class="headerlink" href="#summary-part-1" title="Permalink to this headline">¶</a></h2>
-<p>Before each class starts, you should have already</p>
-<ul class="simple">
-<li><p>“fetched” your class notes repo</p></li>
-<li><p>opened JLab to that folder</p></li>
-</ul>
-<p>And at the end of each class,</p>
-<ul class="simple">
-<li><p>save all open code files,</p></li>
-<li><p>close JLab (and the terminal running it)</p></li>
-<li><p>commit and push your Class Notes repo</p></li>
-<li><p>open the <a class="reference external" href="http://GitHub.com">GitHub.com</a> version of the repo</p></li>
-</ul>
-<p>Code must run from beginning to end and produce the same thing every time</p>
-<ul class="simple">
-<li><p>Restart the kernal and clear output</p></li>
-<li><p>Run all cells</p></li>
-</ul>
-<div class="section" id="more-practice">
-<h3>More practice:<a class="headerlink" href="#more-practice" title="Permalink to this headline">¶</a></h3>
-<ol class="simple">
-<li><p>“Issue demo”: Have student put issue on their Class Note Repo. I’ll reply via email.</p></li>
-<li><p>“Good citizen demo”: Have student suggest a typo fix on the website</p></li>
-<li><p>Highlight “JupyterLab” chapter elements, and have everyone do the walk through of the interface</p></li>
-<li><p>Start everyone’s Notes files with “Practice” and Whirlwind #3</p></li>
-<li><p>A preview of “simple code”</p></li>
-</ol>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>myray: [ 1.33145787  0.54058088 -0.06731178 -0.88356257 -0.09785319]
+</pre></div>
 </div>
 </div>
-<div class="section" id="before-next-time">
-<h2>Before next time<a class="headerlink" href="#before-next-time" title="Permalink to this headline">¶</a></h2>
-<p><img alt="" src="https://media.giphy.com/media/H7x1H0veAJlo4/giphy.gif" /></p>
-<p>Stuck?</p>
+</div>
+</div>
+<div class="section" id="pandas">
+<h2>PANDAS<a class="headerlink" href="#pandas" title="Permalink to this headline">¶</a></h2>
+<ol>
+<li><p>Cover: 3.2.0, 3.2.1</p></li>
+<li><p>Exploring the incredible FRED dataset: <a class="reference external" href="https://fred.stlouisfed.org/">https://fred.stlouisfed.org/</a></p>
 <ul class="simple">
-<li><p><kbd>shift</kbd> + <kbd>tab</kbd>; help(function); find the documentation via google; stack overflow;</p></li>
+<li><p>Unreal repository of data:</p></li>
 </ul>
-<p>Over the weekend:</p>
+<blockquote>
+<div><p>Download, graph, and track <strong>786,000 US and international time series from 103 sources.</strong></p>
+</div></blockquote>
 <ul class="simple">
-<li><p>The task page lists reading to cover and coding to try</p></li>
-<li><p>I added a Markdown tutorial to the textbook that people like a lot</p></li>
-<li><p>On Monday, we will be coding together - more updates on that soon</p></li>
-</ul>
-<div class="section" id="two-great-opportunities">
-<h3>Two great opportunities:<a class="headerlink" href="#two-great-opportunities" title="Permalink to this headline">¶</a></h3>
-<ol class="simple">
-<li><p>J&amp;J competition (see coursesite)</p></li>
-<li><p>FIN388 - small capstone team looking for teammates. ⭐ ⭐</p>
-<ul class="simple">
-<li><p>Will spend semester developing fun, real-world FinTech project for a firm.</p></li>
-<li><p>Project focuses on credit score products, will have data science component, and examine relevant regulatory factors</p></li>
-<li><p>Must have taken FIN330</p></li>
-<li><p>Let me know ASAP!</p></li>
+<li><p>Check out “at a glance” and “popular series”</p></li>
+<li><p>Usable in other classes: easy to download, clean, modify, analyze, plot all that in seconds of coding!</p></li>
 </ul>
 </li>
 </ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">datetime</span>
+<span class="kn">import</span> <span class="nn">pandas_datareader</span> <span class="k">as</span> <span class="nn">pdr</span> <span class="c1"># if error, run: !pip install pandas_datareader </span>
+<span class="n">start</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2017</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="c1"># you can specify start and end dates this way</span>
+<span class="n">end</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2021</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">27</span><span class="p">)</span>
+<span class="n">macro_df</span> <span class="o">=</span> <span class="n">pdr</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">DataReader</span><span class="p">([</span><span class="s1">&#39;GDP&#39;</span><span class="p">,</span><span class="s1">&#39;CPIAUCSL&#39;</span><span class="p">,</span><span class="s1">&#39;UNRATE&#39;</span><span class="p">],</span> <span class="s1">&#39;fred&#39;</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">)</span>
+
+<span class="c1"># prof demo+vocab coverage (students should type out if possible)</span>
+<span class="c1">#    vocab: df, rows, columns/vars (accessing/series), index, </span>
+<span class="c1">#    how to: access 1 var (note: series), access multiple vars</span>
+<span class="c1">#            access col names, rename (some cols, all cols via set_axis(1))</span>
+<span class="c1">#            access index</span>
+<span class="c1">#    index (reset and set)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="more-practice">
+<h3>More practice<a class="headerlink" href="#more-practice" title="Permalink to this headline">¶</a></h3>
+<p>We should start the <code class="docutils literal notranslate"><span class="pre">pandas</span></code> exercises. Let’s at least copy the code to our notebooks.</p>
+<p>If time, let’s get started… try the pre-set breakout rooms</p>
+</div>
+<div class="section" id="next-class">
+<h3>Next class<a class="headerlink" href="#next-class" title="Permalink to this headline">¶</a></h3>
+<p>Will resume the <code class="docutils literal notranslate"><span class="pre">pandas</span></code> exercises next class, ⭐⭐ during which we will have our first student led demos. ⭐⭐</p>
+<ul class="simple">
+<li><p>Morning: Natalie and Christian should solve Q4 (bonus: Q5).</p></li>
+<li><p>Afternoon: alinalam17 and anderseline will demo their solutions to Q4 (bonus: Q5).</p></li>
+</ul>
+</div>
+<div class="section" id="student-demos">
+<h3>Student demos<a class="headerlink" href="#student-demos" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Everyone will do a couple throughout the semester</p></li>
+<li><p>Describe your approach (pseudocode) and then show and explain code step by step</p></li>
+<li><p>Low stakes - typically small problems</p></li>
+<li><p>Varieties: single or team show-and-tell, compare/contrast/discuss</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Remember the 15 minute rule on syntax errors and to LOOK AT YOUR DATA AND OBJECTS A LOT! (every incremental command, for now)</p></li>
+<li><p>Know for Numpy: indexing, masking, avail functions</p></li>
+<li><p>Pandas: LETS GO!</p></li>
+</ul>
+<p><img alt="" src="https://media.giphy.com/media/H7x1H0veAJlo4/giphy.gif" /></p>
+<div class="section" id="shut-down-restart-your-kernal-and-run-code-save-all-open-files-close-jlab-commit-and-push-your-class-notes-repo">
+<h3>Shut down: Restart your kernal and run code, save all open files, close JLab, commit and push your class notes repo.<a class="headerlink" href="#shut-down-restart-your-kernal-and-run-code-save-all-open-files-close-jlab-commit-and-push-your-class-notes-repo" title="Permalink to this headline">¶</a></h3>
 </div>
 </div>
 </div>

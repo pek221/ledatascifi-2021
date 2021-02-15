@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My turn: What were the most popular male and female names in each year? &#8212; LeDataSciFi-2021</title>
+    <title>A side lesson: What on earth is lambda? &#8212; LeDataSciFi-2021</title>
     
   <link rel="stylesheet" href="../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -333,6 +333,21 @@
        3.2.6. Readable Chains
       </a>
      </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="02g_commontasks.html">
+       3.2.7. Common Tasks
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="02h_exercises.html">
+       3.2.8. Exercises
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="02j_resourcesAndSum.html">
+       3.2.9. Summary and Resources
+      </a>
+     </li>
     </ul>
     <i class="fas fa-chevron-down">
     </i>
@@ -449,55 +464,21 @@
             <ul class="nav section-nav flex-column">
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#">
-   My turn: What were the most popular male and female names in each year?
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#a-side-lesson-what-on-earth-is-lambda">
-     A side lesson: What on earth is
-     <strong>
-      <code class="docutils literal notranslate">
-       <span class="pre">
-        lambda
-       </span>
-      </code>
-     </strong>
-     ?
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#maybe-you-say-i-hate-that-and-will-never-ever-write-a-lambda-how-can-i-accomplish-the-problem-above-anyways">
-     Maybe you say “I hate that and will never ever write a lambda. How can I accomplish the problem above anyways?”
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#my-turn-can-we-use-the-last-letter-of-a-name-to-predict-the-sex-of-the-baby">
-   My turn: Can we use the last letter of a name to predict the sex of the baby?
+   A side lesson: What on earth is
+   <strong>
+    <code class="docutils literal notranslate">
+     <span class="pre">
+      lambda
+     </span>
+    </code>
+   </strong>
+   ?
   </a>
  </li>
  <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#your-turn-practice">
-   Your turn: Practice
+  <a class="reference internal nav-link" href="#maybe-you-say-i-hate-that-and-will-never-ever-write-a-lambda-how-can-i-accomplish-the-problem-above-anyways">
+   Maybe you say “I hate that and will never ever write a lambda. How can I accomplish the problem above anyways?”
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#example-1">
-     Example 1
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#example-2">
-     Example 2
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#example-3">
-     Example 3
-    </a>
-   </li>
-  </ul>
  </li>
 </ul>
 
@@ -521,180 +502,8 @@
 </div>
 </div>
 </div>
-<div class="section" id="my-turn-what-were-the-most-popular-male-and-female-names-in-each-year">
-<h1>My turn: What were the most popular male and female names in each year?<a class="headerlink" href="#my-turn-what-were-the-most-popular-male-and-female-names-in-each-year" title="Permalink to this headline">¶</a></h1>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># get the data</span>
-<span class="n">baby_names</span> <span class="o">=</span> <span class="n">dw</span><span class="o">.</span><span class="n">load_dataset</span><span class="p">(</span><span class="s1">&#39;nkrishnaswami/us-ssa-baby-names-national&#39;</span><span class="p">)</span>
-<span class="n">baby_names</span> <span class="o">=</span> <span class="n">baby_names</span><span class="o">.</span><span class="n">dataframes</span><span class="p">[</span><span class="s1">&#39;names_ranks_counts&#39;</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># a silly observation</span>
-<span class="p">(</span><span class="n">baby_names</span><span class="o">.</span><span class="n">pivot_table</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="s1">&#39;year&#39;</span><span class="p">,</span><span class="n">values</span><span class="o">=</span><span class="s1">&#39;name&#39;</span><span class="p">,</span><span class="n">aggfunc</span><span class="o">=</span><span class="s1">&#39;count&#39;</span><span class="p">)</span> <span class="c1"># count unique names per year</span>
-    <span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">&#39;Unique Names Per Year&#39;</span><span class="p">,</span><span class="n">legend</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> <span class="c1"># plot it, uses panda</span>
-<span class="p">)</span> 
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.axes._subplots.AxesSubplot at 0x24e05242608&gt;
-</pre></div>
-</div>
-<img alt="../../_images/old 2_3_1.png" src="../../_images/old 2_3_1.png" />
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">baby_names</span><span class="o">.</span><span class="n">sort_values</span><span class="p">([</span><span class="s1">&#39;year&#39;</span><span class="p">,</span><span class="s1">&#39;sex&#39;</span><span class="p">,</span><span class="s1">&#39;count&#39;</span><span class="p">],</span><span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> <span class="c1"># sort descending so most popular name first</span>
-     <span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;year&#39;</span><span class="p">,</span><span class="s1">&#39;sex&#39;</span><span class="p">])</span> <span class="c1"># group by year and gender </span>
-     <span class="o">.</span><span class="n">agg</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="c1"># keep the first (most popular) name each year</span>
-     <span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span> <span class="c1"># keep only the name variable</span>
-     <span class="o">.</span><span class="n">unstack</span><span class="p">()</span> <span class="c1"># format wide</span>
-     <span class="p">[</span><span class="o">-</span><span class="mi">20</span><span class="p">:]</span>
-<span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th>sex</th>
-      <th>F</th>
-      <th>M</th>
-    </tr>
-    <tr>
-      <th>year</th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>1999</th>
-      <td>Emily</td>
-      <td>Jacob</td>
-    </tr>
-    <tr>
-      <th>2000</th>
-      <td>Emily</td>
-      <td>Jacob</td>
-    </tr>
-    <tr>
-      <th>2001</th>
-      <td>Emily</td>
-      <td>Jacob</td>
-    </tr>
-    <tr>
-      <th>2002</th>
-      <td>Emily</td>
-      <td>Jacob</td>
-    </tr>
-    <tr>
-      <th>2003</th>
-      <td>Emily</td>
-      <td>Jacob</td>
-    </tr>
-    <tr>
-      <th>2004</th>
-      <td>Emily</td>
-      <td>Jacob</td>
-    </tr>
-    <tr>
-      <th>2005</th>
-      <td>Emily</td>
-      <td>Jacob</td>
-    </tr>
-    <tr>
-      <th>2006</th>
-      <td>Emily</td>
-      <td>Jacob</td>
-    </tr>
-    <tr>
-      <th>2007</th>
-      <td>Emily</td>
-      <td>Jacob</td>
-    </tr>
-    <tr>
-      <th>2008</th>
-      <td>Emma</td>
-      <td>Jacob</td>
-    </tr>
-    <tr>
-      <th>2009</th>
-      <td>Isabella</td>
-      <td>Jacob</td>
-    </tr>
-    <tr>
-      <th>2010</th>
-      <td>Isabella</td>
-      <td>Jacob</td>
-    </tr>
-    <tr>
-      <th>2011</th>
-      <td>Sophia</td>
-      <td>Jacob</td>
-    </tr>
-    <tr>
-      <th>2012</th>
-      <td>Sophia</td>
-      <td>Jacob</td>
-    </tr>
-    <tr>
-      <th>2013</th>
-      <td>Sophia</td>
-      <td>Noah</td>
-    </tr>
-    <tr>
-      <th>2014</th>
-      <td>Emma</td>
-      <td>Noah</td>
-    </tr>
-    <tr>
-      <th>2015</th>
-      <td>Emma</td>
-      <td>Noah</td>
-    </tr>
-    <tr>
-      <th>2016</th>
-      <td>Emma</td>
-      <td>Noah</td>
-    </tr>
-    <tr>
-      <th>2017</th>
-      <td>Emma</td>
-      <td>Liam</td>
-    </tr>
-    <tr>
-      <th>2018</th>
-      <td>Emma</td>
-      <td>Liam</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
-</div>
 <div class="section" id="a-side-lesson-what-on-earth-is-lambda">
-<h2>A side lesson: What on earth is <strong><code class="docutils literal notranslate"><span class="pre">lambda</span></code></strong>?<a class="headerlink" href="#a-side-lesson-what-on-earth-is-lambda" title="Permalink to this headline">¶</a></h2>
+<h1>A side lesson: What on earth is <strong><code class="docutils literal notranslate"><span class="pre">lambda</span></code></strong>?<a class="headerlink" href="#a-side-lesson-what-on-earth-is-lambda" title="Permalink to this headline">¶</a></h1>
 <p>Can you survive without learning <code class="docutils literal notranslate"><span class="pre">lambda</span></code>? Yes.</p>
 <p>But knowing <code class="docutils literal notranslate"><span class="pre">lambda</span></code> will make you a more powerful programmer, because it lets you define functions very quickly. And this is very useful! For example, the <code class="docutils literal notranslate"><span class="pre">agg</span></code> function can apply any function, not just built-in ones, and sometimes you’ll want to use non built-in functions!</p>
 <p>So, generally, the syntax is <code class="docutils literal notranslate"><span class="pre">&lt;fcn_name&gt;</span> <span class="pre">=</span> <span class="pre">lambda</span> <span class="pre">&lt;argument&gt;</span> <span class="pre">:</span> <span class="pre">&lt;function&gt;</span></code>.</p>
@@ -714,7 +523,7 @@
 <p>Now, in the example above inside <code class="docutils literal notranslate"><span class="pre">agg()</span></code> I never named the function. That’s because it’s unnecessary in that context, python knows to immediately call it.</p>
 </div>
 <div class="section" id="maybe-you-say-i-hate-that-and-will-never-ever-write-a-lambda-how-can-i-accomplish-the-problem-above-anyways">
-<h2>Maybe you say “I hate that and will never ever write a lambda. How can I accomplish the problem above anyways?”<a class="headerlink" href="#maybe-you-say-i-hate-that-and-will-never-ever-write-a-lambda-how-can-i-accomplish-the-problem-above-anyways" title="Permalink to this headline">¶</a></h2>
+<h1>Maybe you say “I hate that and will never ever write a lambda. How can I accomplish the problem above anyways?”<a class="headerlink" href="#maybe-you-say-i-hate-that-and-will-never-ever-write-a-lambda-how-can-i-accomplish-the-problem-above-anyways" title="Permalink to this headline">¶</a></h1>
 <p>Well, I’m sorry to hear that! Here is what you could do:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -863,115 +672,6 @@
   </tbody>
 </table>
 </div></div></div>
-</div>
-</div>
-</div>
-<div class="section" id="my-turn-can-we-use-the-last-letter-of-a-name-to-predict-the-sex-of-the-baby">
-<h1>My turn: Can we use the last letter of a name to predict the sex of the baby?<a class="headerlink" href="#my-turn-can-we-use-the-last-letter-of-a-name-to-predict-the-sex-of-the-baby" title="Permalink to this headline">¶</a></h1>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">baby_names</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;year &gt;= 1970&#39;</span><span class="p">)</span> <span class="c1"># let&#39;s focus on the last 50 years, maybe old-timey people had different naming rules</span>
-           <span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="n">last_letter</span> <span class="o">=</span> <span class="n">baby_names</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="c1"># get the last letter of each name string</span>
-           <span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="n">male</span> <span class="o">=</span> <span class="n">baby_names</span><span class="p">[</span><span class="s1">&#39;sex&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;M&#39;</span><span class="p">)</span> <span class="c1"># = 1 if male, 0 else</span>
-           <span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="n">female</span><span class="o">=</span> <span class="n">baby_names</span><span class="p">[</span><span class="s1">&#39;sex&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;F&#39;</span><span class="p">)</span> <span class="c1"># = 1 if female, 0 else</span>
-           <span class="o">.</span><span class="n">pivot_table</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="s1">&#39;last_letter&#39;</span><span class="p">,</span><span class="n">values</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;male&#39;</span><span class="p">,</span><span class="s1">&#39;female&#39;</span><span class="p">])</span> <span class="c1"># average of male &amp; female variables --&gt; % of each</span>
-           <span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;male&#39;</span><span class="p">)</span> <span class="c1"># so the figure is in order</span>
-           <span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">barh</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="mi">7</span><span class="p">),</span> <span class="c1"># make it a bit bigger </span>
-           <span class="n">title</span> <span class="o">=</span> <span class="s1">&#39;Gender fraction by last letter in name </span><span class="se">\n</span><span class="s1"> </span><span class="se">\n</span><span class="s1"> &quot;Feminine letters&quot;: A,H,E,I,Y&#39;</span><span class="p">)</span>
-           <span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;&lt;-----Femine letters                         Masculine letters-----&gt;&quot;</span><span class="p">)</span>
-<span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="section" id="your-turn-practice">
-<h1>Your turn: Practice<a class="headerlink" href="#your-turn-practice" title="Permalink to this headline">¶</a></h1>
-<p>Try each one alone, then check and compare with the person next to you.</p>
-<p>There are many ways to solve each, so if your approaches differ, explain it to each other!</p>
-<div class="section" id="example-1">
-<h2>Example 1<a class="headerlink" href="#example-1" title="Permalink to this headline">¶</a></h2>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">start</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2010</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="c1"># you can specify start and end dates this way</span>
-<span class="n">end</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2013</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">27</span><span class="p">)</span>
-<span class="n">macro_df</span> <span class="o">=</span> <span class="n">pdr</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">DataReader</span><span class="p">([</span><span class="s1">&#39;GDP&#39;</span><span class="p">,</span><span class="s1">&#39;CPIAUCSL&#39;</span><span class="p">],</span> <span class="s1">&#39;fred&#39;</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<ul class="simple">
-<li><p>Q0: Do each of the four new golden rules for initial data exploration, from the lecture.</p></li>
-<li><p>Q1: What is the second series above?</p></li>
-<li><p>Q2: What is the frequency of the series?</p></li>
-<li><p>Q3: What is the average ANNUAL GDP, based on the data?</p></li>
-</ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># do your work here</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="section" id="example-2">
-<h2>Example 2<a class="headerlink" href="#example-2" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li><p>Q4: Download the annual <em>real</em> gdp from 1960 to 2018 from FRED and compute the average annual percent change</p></li>
-<li><p>Q5: Compute the average gdp percent change within <em>each decade</em></p></li>
-</ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># do your work here</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="section" id="example-3">
-<h2>Example 3<a class="headerlink" href="#example-3" title="Permalink to this headline">¶</a></h2>
-<p>First, I’ll load January data on unemployment, the Case-Shiller housing index, and median household income in three states (CA/MI/PA).</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># LOAD DATA AND CONVERT TO ANNUAL</span>
-
-<span class="n">start</span> <span class="o">=</span> <span class="mi">1990</span> <span class="c1"># pandas datareader can infer these are years</span>
-<span class="n">end</span> <span class="o">=</span> <span class="mi">2018</span>
-<span class="n">macro_data</span> <span class="o">=</span> <span class="n">pdr</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">DataReader</span><span class="p">([</span><span class="s1">&#39;CAUR&#39;</span><span class="p">,</span><span class="s1">&#39;MIUR&#39;</span><span class="p">,</span><span class="s1">&#39;PAUR&#39;</span><span class="p">,</span> <span class="c1"># unemployment </span>
-                                  <span class="s1">&#39;LXXRSA&#39;</span><span class="p">,</span><span class="s1">&#39;DEXRSA&#39;</span><span class="p">,</span><span class="s1">&#39;WDXRSA&#39;</span><span class="p">,</span> <span class="c1"># case shiller index in LA, Detroit, DC (no PA  available!)</span>
-                                  <span class="s1">&#39;MEHOINUSCAA672N&#39;</span><span class="p">,</span><span class="s1">&#39;MEHOINUSMIA672N&#39;</span><span class="p">,</span><span class="s1">&#39;MEHOINUSPAA672N&#39;</span><span class="p">],</span> <span class="c1">#  </span>
-                                 <span class="s1">&#39;fred&#39;</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">)</span>
-<span class="n">macro_data</span> <span class="o">=</span> <span class="n">macro_data</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s1">&#39;Y&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">first</span><span class="p">()</span> <span class="c1"># get&#39;s the first observation for each variable in a given year</span>
-
-<span class="c1"># CLEAN UP THE FORMATING SOMEWHAT</span>
-
-<span class="n">macro_data</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">macro_data</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">year</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2"> DATA BEFORE FORMATTING: </span><span class="se">\n\n</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">macro_data</span><span class="p">[:</span><span class="mi">20</span><span class="p">])</span> <span class="c1"># see how the data looks now? ugly variable names, but its an annual dataset at least</span>
-<span class="n">macro_data</span><span class="o">.</span><span class="n">columns</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">MultiIndex</span><span class="o">.</span><span class="n">from_tuples</span><span class="p">([</span>
-    <span class="p">(</span><span class="s1">&#39;Unemployment&#39;</span><span class="p">,</span><span class="s1">&#39;CA&#39;</span><span class="p">),(</span><span class="s1">&#39;Unemployment&#39;</span><span class="p">,</span><span class="s1">&#39;MI&#39;</span><span class="p">),(</span><span class="s1">&#39;Unemployment&#39;</span><span class="p">,</span><span class="s1">&#39;PA&#39;</span><span class="p">),</span>
-    <span class="p">(</span><span class="s1">&#39;HouseIdx&#39;</span><span class="p">,</span><span class="s1">&#39;CA&#39;</span><span class="p">),(</span><span class="s1">&#39;HouseIdx&#39;</span><span class="p">,</span><span class="s1">&#39;MI&#39;</span><span class="p">),(</span><span class="s1">&#39;HouseIdx&#39;</span><span class="p">,</span><span class="s1">&#39;PA&#39;</span><span class="p">),</span>
-    <span class="p">(</span><span class="s1">&#39;MedIncome&#39;</span><span class="p">,</span><span class="s1">&#39;CA&#39;</span><span class="p">),(</span><span class="s1">&#39;MedIncome&#39;</span><span class="p">,</span><span class="s1">&#39;MI&#39;</span><span class="p">),(</span><span class="s1">&#39;MedIncome&#39;</span><span class="p">,</span><span class="s1">&#39;PA&#39;</span><span class="p">)</span>
-    <span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2"> DATA AFTER FORMATTING: </span><span class="se">\n\n</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">macro_data</span><span class="p">[:</span><span class="mi">20</span><span class="p">])</span> <span class="c1"># this is a dataset that is &quot;wide&quot;, and now </span>
-                       <span class="c1"># the column variable names have 2 levels - var name, </span>
-                       <span class="c1"># and unit/state that variable applies to</span>
-</pre></div>
-</div>
-</div>
-</div>
-<ul class="simple">
-<li><p>Q6: for each decade and state, report the average annual CHANGE (level, not percent) in unemployment</p></li>
-<li><p>Q7: for each decade and state, report the average annual PERCENT CHANGE in house prices and household income</p></li>
-</ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># do your work here</span>
-</pre></div>
-</div>
-</div>
-</div>
 </div>
 </div>
 

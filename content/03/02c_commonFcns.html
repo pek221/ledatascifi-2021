@@ -335,6 +335,21 @@
        3.2.6. Readable Chains
       </a>
      </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="02g_commontasks.html">
+       3.2.7. Common Tasks
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="02h_exercises.html">
+       3.2.8. Exercises
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="02j_resourcesAndSum.html">
+       3.2.9. Summary and Resources
+      </a>
+     </li>
     </ul>
     <i class="fas fa-chevron-down">
     </i>
@@ -491,7 +506,10 @@ Manipulating data ⭐<div class="summary-down docutils">
 <div class="summary-up docutils">
 <svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="summary-content card-body docutils">
+<div class="admonition note">
+<p class="admonition-title">Note</p>
 <p class="card-text">Remember: replace <code class="docutils literal notranslate"><span class="pre">df</span></code> below with the name of the dataframe you’re working on!</p>
+</div>
 <table class="colwidths-auto table">
 <thead>
 <tr class="row-odd"><th class="text-align:left head"><p class="card-text">Function</p></th>
@@ -548,22 +566,6 @@ Manipulating data ⭐<div class="summary-down docutils">
 <td class="text-align:left"><p class="card-text">merge</p></td>
 <td class="text-align:left"><p class="card-text"><code class="docutils literal notranslate"><span class="pre">pd.merge(df1,df2)</span></code></p></td>
 </tr>
-<tr class="row-even"><td class="text-align:left"><p class="card-text"><strong>RESHAPE:</strong> convert wide to long/tall (“stack!”)</p></td>
-<td class="text-align:left"><p class="card-text">stack</p></td>
-<td class="text-align:left"><p class="card-text"><code class="docutils literal notranslate"><span class="pre">df.stack()</span></code>, see <a class="reference internal" href="02g_commontasks.html"><span class="doc std std-doc">common tasks</span></a></p></td>
-</tr>
-<tr class="row-odd"><td class="text-align:left"><p class="card-text">… another option to reshape tall:</p></td>
-<td class="text-align:left"><p class="card-text">melt</p></td>
-<td class="text-align:left"><p class="card-text"><code class="docutils literal notranslate"><span class="pre">melt</span></code> is a special case of <code class="docutils literal notranslate"><span class="pre">stack</span></code></p></td>
-</tr>
-<tr class="row-even"><td class="text-align:left"><p class="card-text"><strong>RESHAPE:</strong> convert long/tall to wide (“unstack!”)</p></td>
-<td class="text-align:left"><p class="card-text">unstack</p></td>
-<td class="text-align:left"><p class="card-text"><code class="docutils literal notranslate"><span class="pre">df.unstack()</span></code>, see <a class="reference internal" href="02g_commontasks.html"><span class="doc std std-doc">common tasks</span></a></p></td>
-</tr>
-<tr class="row-odd"><td class="text-align:left"><p class="card-text">… another option to reshape wide:</p></td>
-<td class="text-align:left"><p class="card-text">pivot / pivot_table</p></td>
-<td class="text-align:left"><p class="card-text"><code class="docutils literal notranslate"><span class="pre">pivot_table</span></code> is a special case of <code class="docutils literal notranslate"><span class="pre">unstack</span></code></p></td>
-</tr>
 <tr class="row-even"><td class="text-align:left"><p class="card-text">change time frequency of data</p></td>
 <td class="text-align:left"><p class="card-text">resample</p></td>
 <td class="text-align:left"><p class="card-text"><code class="docutils literal notranslate"><span class="pre">df.resample('Y').mean()</span></code></p></td>
@@ -577,13 +579,47 @@ Manipulating data ⭐<div class="summary-down docutils">
 </div>
 </details><details class="sphinx-bs dropdown card mb-3">
 <summary class="summary-title card-header">
+Reshaping data and changing index<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:left head"><p class="card-text">Function</p></th>
+<th class="text-align:left head"><p class="card-text">Pandas method</p></th>
+<th class="text-align:left head"><p class="card-text">Example  (see official syntax for more)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:left"><p class="card-text">convert wide to long/tall (“stack!”)</p></td>
+<td class="text-align:left"><p class="card-text">stack</p></td>
+<td class="text-align:left"><p class="card-text"><code class="docutils literal notranslate"><span class="pre">df.stack()</span></code>, see <a class="reference internal" href="02g_commontasks.html"><span class="doc std std-doc">common tasks</span></a> for usage examples and <a class="reference external" href="02b_pandasVocab.html#the-shape-of-data">The Shape of Data</a> for explanation of wide/tall  <br> <br>  <code class="docutils literal notranslate"><span class="pre">melt</span></code>  is another option and is a special case of <code class="docutils literal notranslate"><span class="pre">stack</span></code></p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p class="card-text">convert long/tall to wide (“unstack!”)</p></td>
+<td class="text-align:left"><p class="card-text">unstack</p></td>
+<td class="text-align:left"><p class="card-text"><code class="docutils literal notranslate"><span class="pre">df.unstack()</span></code>, see <a class="reference internal" href="02g_commontasks.html"><span class="doc std std-doc">common tasks</span></a> for usage examples and <a class="reference external" href="02b_pandasVocab.html#the-shape-of-data">The Shape of Data</a> for explanation of wide/tall <br> <br> <code class="docutils literal notranslate"><span class="pre">pivot_table</span></code> is another option and is a special case of <code class="docutils literal notranslate"><span class="pre">unstack</span></code></p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p class="card-text">turn a variable column into the index</p></td>
+<td class="text-align:left"><p class="card-text">set_index</p></td>
+<td class="text-align:left"><p class="card-text"><code class="docutils literal notranslate"><span class="pre">df.set_index('SSN')</span></code></p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p class="card-text">turn the index into a variable</p></td>
+<td class="text-align:left"><p class="card-text">reset_index</p></td>
+<td class="text-align:left"><p class="card-text"><code class="docutils literal notranslate"><span class="pre">df.reset_index()</span></code> <br> <br> <em>Note: The new index will just be the row numbers.</em></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</details><details class="sphinx-bs dropdown card mb-3">
+<summary class="summary-title card-header">
 Statistical operations<div class="summary-down docutils">
 <svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
 <div class="summary-up docutils">
 <svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="summary-content card-body docutils">
 <ol class="simple">
-<li><p class="card-text">These functions can be called for a variable “col1” in this form: <code class="docutils literal notranslate"><span class="pre">&lt;dfname&gt;['col1'].&lt;function&gt;()</span></code> or for all numerical columns at once using <code class="docutils literal notranslate"><span class="pre">&lt;dfname&gt;.&lt;function&gt;()</span></code>.</p></li>
+<li><p class="card-text">These functions can be called for a variable “col1” in this form: <code class="docutils literal notranslate"><span class="pre">&lt;dfname&gt;['columnname'].&lt;function&gt;()</span></code> or for all numerical columns at once using <code class="docutils literal notranslate"><span class="pre">&lt;dfname&gt;.&lt;function&gt;()</span></code>.</p></li>
 <li><p class="card-text">These functions work within groups. ⭐</p></li>
 </ol>
 <table class="colwidths-auto table">
