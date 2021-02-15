@@ -115,5 +115,11 @@
           title: "Golden Rules + EDA"      
         - file: "content/03/02f_chains"
           title: "Readable Chains" 
+        - file: "content/03/02g_commontasks"
+          title: "Common Tasks" 
+        - file: "content/03/02h_exercises"
+          title: "Exercises" 
+        - file: "content/03/02j_resourcesAndSum"
+          title: "Summary and Resources" 
       
       
