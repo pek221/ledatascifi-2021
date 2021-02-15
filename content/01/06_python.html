@@ -46,8 +46,6 @@
     <script src="../../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -291,6 +289,11 @@
      <li class="toctree-l3">
       <a class="reference internal" href="../03/01d_NumpyResources.html">
        3.1.4. More Resources
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../03/01d_NumpyResources.html#survey">
+       3.1.5. Survey
       </a>
      </li>
     </ul>
@@ -763,11 +766,16 @@
 <h3><span class="section-number">1.6.2.7. </span>Common object types<a class="headerlink" href="#common-object-types" title="Permalink to this headline">¶</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">Boolean</span></code> and <code class="docutils literal notranslate"><span class="pre">int</span></code> were covered above.</p>
 <p><code class="docutils literal notranslate"><span class="pre">None</span></code>. <a class="reference external" href="https://nbviewer.jupyter.org/github/jakevdp/WhirlwindTourOfPython/blob/master/05-Built-in-Scalar-Types.ipynb#None-Type">See here</a>.</p>
-<p><code class="docutils literal notranslate"><span class="pre">float</span></code>. <strong>WARNING: Beware of comparing floating point numbers!</strong> Below is an example, and see <a class="reference external" href="https://nbviewer.jupyter.org/github/jakevdp/WhirlwindTourOfPython/blob/master/05-Built-in-Scalar-Types.ipynb#Aside:-Floating-point-precision">here for the explanation</a>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">float</span></code>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><strong>Beware of comparing floating point numbers!</strong>
+Below is an example, and see <a class="reference external" href="https://nbviewer.jupyter.org/github/jakevdp/WhirlwindTourOfPython/blob/master/05-Built-in-Scalar-Types.ipynb#Aside:-Floating-point-precision">here for the explanation</a>.</p>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mf">1.0</span><span class="o">+</span><span class="mf">2.0</span> <span class="o">==</span> <span class="mf">3.0</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="mf">0.1</span><span class="o">+</span><span class="mf">0.2</span> <span class="o">==</span> <span class="mf">0.3</span><span class="p">)</span> <span class="c1"># WHAT?!</span>
+<span class="nb">print</span><span class="p">(</span><span class="mf">0.1</span><span class="o">+</span><span class="mf">0.2</span> <span class="o">==</span> <span class="mf">0.3</span><span class="p">)</span> <span class="c1"># FALSE?!</span>
 </pre></div>
 </div>
 </div>
@@ -869,31 +877,30 @@ False
 <p>A few comments:</p>
 <p><strong>PYTHON AND INDENTATION</strong>
 <br></p>
-<p>In python, indentations at the beginning of lines are not “up to the user”. Indentations indicate a “block” of code that is run as a unit.
-<br></p>
-<p>These two codes look similar but produce different results:</p>
+<p>In python, indentations at the beginning of lines are not “up to the user”. Indentations indicate a “block” of code that is run as a unit.</p>
 <div class="cell tag_popout docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">7</span>
-<span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">:</span>       <span class="c1"># this is false, obviously,</span>
-    <span class="n">z</span> <span class="o">=</span> <span class="n">x</span><span class="o">+</span><span class="mi">2</span>        <span class="c1"># so this never runs and </span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;I am not here.&#39;</span><span class="p">)</span> <span class="c1"># this doesn&#39;t print</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;stating new block&#39;</span><span class="p">)</span>
-<span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">:</span>       <span class="c1"># this is false, obviously,</span>
-    <span class="n">z</span> <span class="o">=</span> <span class="n">x</span><span class="o">+</span><span class="mi">2</span>        <span class="c1"># so this never runs and </span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;I am here&#39;</span><span class="p">)</span> <span class="c1"># this does print</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="mi">7</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">:</span>     
+    <span class="c1"># this is false, obvi, so </span>
+    <span class="c1"># nothing under/inside the</span>
+    <span class="c1"># if statement runs</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;I am NOT here.&#39;</span><span class="p">)</span> 
+    
+<span class="c1"># the next unindented line is</span>
+<span class="c1"># not governed by the &quot;if&quot;</span>
+<span class="c1"># so it does run</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;But I am here&#39;</span><span class="p">)</span> 
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>stating new block
-I am here
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>But I am here
 </pre></div>
 </div>
 </div>
 </div>
 <ul class="simple">
-<li><p>The syntax is <code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">&lt;name&gt;</span> <span class="pre">in</span> <span class="pre">&lt;iterable</span> <span class="pre">object&gt;:</span></code>. <strong>You must include the colon!</strong> After that, all lines of code within the “block” of code of the for loop are indented. See the popout to the right on indentation.</p>
+<li><p>The syntax for a for loop is <code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">&lt;name&gt;</span> <span class="pre">in</span> <span class="pre">&lt;iterable</span> <span class="pre">object&gt;:</span></code>. <strong>You must include the colon!</strong> After that, all lines of code within the “block” of code of the for loop are indented. See the popout to the right on indentation.</p>
 <ul>
 <li><p><em>Note: When I write anything inside <code class="docutils literal notranslate"><span class="pre">&lt;&gt;</span></code>, you should drop the “&lt;” and “&gt;” symbols too.</em></p></li>
 </ul>
@@ -916,13 +923,12 @@ I am here
 <div class="section" id="if-elif-else">
 <h3><span class="section-number">1.6.2.10. </span>If, elif, else<a class="headerlink" href="#if-elif-else" title="Permalink to this headline">¶</a></h3>
 <p>Syntax:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="o">&lt;</span><span class="n">condition</span> <span class="c1">#1&gt;:                         # you must use the colon!</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="o">&lt;</span><span class="n">condition</span> <span class="mi">1</span><span class="o">&gt;</span><span class="p">:</span>                         <span class="c1"># you must use the colon!</span>
      <span class="o">&lt;</span><span class="n">do</span> <span class="n">some</span> <span class="n">stuff</span> <span class="k">if</span> <span class="n">condition</span> <span class="ow">is</span> <span class="n">true</span><span class="o">&gt;</span>
-<span class="k">elif</span> <span class="o">&lt;</span><span class="n">condition</span> <span class="c1">#2&gt;:                       # as in &quot;Else-If&quot;</span>
-    <span class="o">&lt;</span><span class="k">if</span> <span class="n">condition</span> <span class="c1">#1 is false, and </span>
-    <span class="n">condition</span> <span class="c1">#2 is true, run this block&gt;</span>
+<span class="k">elif</span> <span class="o">&lt;</span><span class="n">condition</span> <span class="mi">2</span><span class="o">&gt;</span><span class="p">:</span>                       <span class="c1"># as in &quot;Else-If&quot;</span>
+    <span class="o">&lt;</span><span class="n">do</span> <span class="n">stuff</span> <span class="k">if</span> <span class="n">cond</span> <span class="mi">1</span> <span class="ow">is</span> <span class="n">false</span> <span class="ow">and</span> <span class="mi">2</span> <span class="ow">is</span> <span class="n">true</span><span class="o">&gt;</span>
 <span class="k">else</span><span class="p">:</span>
-    <span class="o">&lt;</span><span class="k">if</span> <span class="n">neither</span> <span class="c1">#1 or #2 are true, do this&gt;</span>
+    <span class="o">&lt;</span><span class="k">if</span> <span class="n">neither</span> <span class="mi">1</span> <span class="ow">or</span> <span class="mi">2</span> <span class="n">are</span> <span class="n">true</span><span class="p">,</span> <span class="n">do</span> <span class="n">this</span><span class="o">&gt;</span>
 </pre></div>
 </div>
 <p>Comments:</p>
@@ -1018,7 +1024,7 @@ Help on function f in module __main__:
 
 f(x, a=1, b=1)
     The first argument you give goes to x, the second to a, the third to b.
-    If you do no provide a or b, they default to the value 1.
+    If you do not provide a or b, they default to the value 1.
 </pre></div>
 </div>
 </div>
