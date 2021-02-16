@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>1.1. Motivation, &#8212; LeDataSciFi-2021</title>
+    <title>1.8. Errors &#8212; LeDataSciFi-2021</title>
     
   <link rel="stylesheet" href="../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -55,8 +55,8 @@
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="1.2. Set up" href="02_Setup.html" />
-    <link rel="prev" title="1. Getting the band together" href="00_Getting_Started.html" />
+    <link rel="next" title="1.9. Installing libraries" href="08_libraries.html" />
+    <link rel="prev" title="1.7. Debugging - Making code work" href="07_debugging.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -173,8 +173,8 @@
    1. Motivation and Getting Started
   </a>
   <ul class="current collapse-ul">
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
+   <li class="toctree-l2">
+    <a class="reference internal" href="01_Motivation.html">
      1.1. Motivation
     </a>
    </li>
@@ -208,8 +208,8 @@
      1.7. Debugging
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="07a_errors.html">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
      1.8. Errors
     </a>
    </li>
@@ -399,7 +399,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/content/01/01_Motivation.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/content/01/07a_errors.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -419,10 +419,10 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/LeDataSciFi/ledatascifi-2021/issues/new?title=Issue%20on%20page%20%2Fcontent/01/01_Motivation.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/LeDataSciFi/ledatascifi-2021/issues/new?title=Issue%20on%20page%20%2Fcontent/01/07a_errors.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        <a class="edit-button" href="https://github.com/LeDataSciFi/ledatascifi-2021/edit/main/content/01/01_Motivation.ipynb"><button
+        <a class="edit-button" href="https://github.com/LeDataSciFi/ledatascifi-2021/edit/main/content/01/07a_errors.ipynb"><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
     </div>
@@ -442,7 +442,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/LeDataSciFi/ledatascifi-2021/main?urlpath=lab/tree/content/01/01_Motivation.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/LeDataSciFi/ledatascifi-2021/main?urlpath=lab/tree/content/01/07a_errors.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../../_static/images/logo_binder.svg"
@@ -450,7 +450,7 @@
         
         
         
-        <a class="colab-button" href="https://colab.research.google.com/github/LeDataSciFi/ledatascifi-2021/blob/main/content/01/01_Motivation.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+        <a class="colab-button" href="https://colab.research.google.com/github/LeDataSciFi/ledatascifi-2021/blob/main/content/01/07a_errors.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
                 title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
                     src="../../_static/images/logo_colab.png"
                     alt="Interact on Colab">Colab</button></a>
@@ -470,23 +470,60 @@
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#or-should-i-take-this-class-a-yes">
-   1.1.1. Or: Should I take this class (A: YES!)
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#the-data-scientist-approach">
-   1.1.2. The data scientist approach
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#from-here-to-there">
-   1.1.3. From here to there…
+  <a class="reference internal nav-link" href="#most-common-error-types">
+   1.8.1. Most common error types
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#our-bargain-not-faustian-i-hope">
-     1.1.3.1. Our bargain (not Faustian, I hope)
+    <a class="reference internal nav-link" href="#syntaxerror">
+     1.8.1.1.
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       SyntaxError
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#indentationerror">
+     1.8.1.2.
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       IndentationError
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#typeerror">
+     1.8.1.3.
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       TypeError
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#nameerror">
+     1.8.1.4.
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       NameError
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#handling-errors">
+   1.8.2. Handling errors
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#references">
+     1.8.2.1. References
     </a>
    </li>
   </ul>
@@ -502,103 +539,175 @@
         
               <div>
                 
-  <div class="section" id="motivation">
-<h1><span class="section-number">1.1. </span>Motivation,<a class="headerlink" href="#motivation" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="or-should-i-take-this-class-a-yes">
-<h2><span class="section-number">1.1.1. </span>Or: Should I take this class (A: YES!)<a class="headerlink" href="#or-should-i-take-this-class-a-yes" title="Permalink to this headline">¶</a></h2>
-<p>Employers are starving for talented students that can use Python, and they are willing to pay for it:</p>
-<div class="tabbed-set docutils">
-<input checked="checked" id="9dec8c18-df87-4c28-ac3b-3f3fab57bcf9" name="fefedd3d-966c-4503-a0c1-3b5e3cbe65a6" type="radio">
-</input><label class="tabbed-label" for="9dec8c18-df87-4c28-ac3b-3f3fab57bcf9">
-Jobs and pay by language</label><div class="tabbed-content docutils">
-<p>Python is #2 for jobs with a high salary:</p>
-<a class="reference internal image-reference" href="../../_images/indeed.png"><img alt="indeeed" class="align-center" src="../../_images/indeed.png" style="width: 600px;" /></a>
+  <div class="section" id="errors">
+<h1><span class="section-number">1.8. </span>Errors<a class="headerlink" href="#errors" title="Permalink to this headline">¶</a></h1>
+<p>Some students thought a quick walkthrough of errors and fixing them would be helpful.</p>
+<p>Below, I try to fix a two line program, and you’ll see the most common error types. There are more error types in python, and for more info, I’ll refer you to</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.tutorialsteacher.com/python/error-types-in-python">this website-tutorialsteacher</a> for a short description of them,</p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/tutorial/errors.html">the official python documentation</a> for more through coverage</p></li>
+<li><p>and Google/StackOverflow. Tough to beat copy/pasting the error code into google to find fixes or pointers.</p></li>
+</ul>
+<p>When you get to more advanced programming, you’ll sometimes want code running even when it produces an error! <a class="reference external" href="#handling-errors">The last section</a> below has some pointers on that.</p>
+<div class="section" id="most-common-error-types">
+<h2><span class="section-number">1.8.1. </span>Most common error types<a class="headerlink" href="#most-common-error-types" title="Permalink to this headline">¶</a></h2>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p><a class="reference external" href="https://www.tutorialsteacher.com/python/error-types-in-python">This website-tutorialsteacher</a> has a nice page listing the most common error types. If you get an error and aren’t sure what it means, refer to this link as a starting point.</p>
 </div>
-<input id="f8951fca-7eff-46c6-b8af-f655d5101881" name="fefedd3d-966c-4503-a0c1-3b5e3cbe65a6" type="radio">
-</input><label class="tabbed-label" for="f8951fca-7eff-46c6-b8af-f655d5101881">
-DS Jobs</label><div class="tabbed-content docutils">
-<p>Within “data science” itself, it has the most jobs:</p>
-<a class="reference internal image-reference" href="../../_images/jobs-by-lang.png"><img alt="jobs" class="align-center" src="../../_images/jobs-by-lang.png" style="width: 600px;" /></a>
-</div>
-<input id="1c72d410-6020-4516-8f1f-ae1ab1e46257" name="fefedd3d-966c-4503-a0c1-3b5e3cbe65a6" type="radio">
-</input><label class="tabbed-label" for="1c72d410-6020-4516-8f1f-ae1ab1e46257">
-Stackoverflow</label><div class="tabbed-content docutils">
-<p>Among the common alternative data science languages, the most popular on SO:</p>
-<a class="reference internal image-reference" href="../../_images/stackoverflowstrends.svg"><img alt="lingotrend" class="align-center" src="../../_images/stackoverflowstrends.svg" width="600px" /></a>
-</div>
-<input id="87adbf5a-d3a7-4b69-96ee-44f17bb03fbb" name="fefedd3d-966c-4503-a0c1-3b5e3cbe65a6" type="radio">
-</input><label class="tabbed-label" for="87adbf5a-d3a7-4b69-96ee-44f17bb03fbb">
-Lehigh pay</label><div class="tabbed-content docutils">
-<a class="reference internal image-reference" href="../../_images/lehigh.jpg"><img alt="lingotrend" class="align-center" src="../../_images/lehigh.jpg" style="width: 600px;" /></a>
+<div class="section" id="syntaxerror">
+<h3><span class="section-number">1.8.1.1. </span><code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code><a class="headerlink" href="#syntaxerror" title="Permalink to this headline">¶</a></h3>
+<p>Means there is something wrong with the way your program is written. This often means you included or excluded punctuation that does/does not belong.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="kc">True</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;hi&quot;&quot;+2+name)</span>
+</pre></div>
 </div>
 </div>
-<p>Why is that? Well, it is not just about rote coding. It’s about a set of complementary skills, used within a framework for problem solving.</p>
 </div>
-<div class="section" id="the-data-scientist-approach">
-<h2><span class="section-number">1.1.2. </span>The data scientist approach<a class="headerlink" href="#the-data-scientist-approach" title="Permalink to this headline">¶</a></h2>
+<p>Let’s fix that by adding a colon.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="kc">True</span><span class="p">:</span> <span class="c1"># &lt;-- fix</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;hi &quot;&quot;+2+name)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;&lt;ipython-input-2-37fa5b564367&gt;&quot;</span><span class="gt">, line </span><span class="mi">2</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;hi &quot;&quot;+2+name)</span>
+    <span class="o">^</span>
+<span class="ne">IndentationError</span>: expected an indented block
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="indentationerror">
+<h3><span class="section-number">1.8.1.2. </span><code class="docutils literal notranslate"><span class="pre">IndentationError</span></code><a class="headerlink" href="#indentationerror" title="Permalink to this headline">¶</a></h3>
+<p>Is pretty self explanatory but common, especially when you’re writing code with multiple layers of <code class="docutils literal notranslate"><span class="pre">for</span></code>, <code class="docutils literal notranslate"><span class="pre">if</span></code>, <code class="docutils literal notranslate"><span class="pre">def</span></code>, <code class="docutils literal notranslate"><span class="pre">try</span></code>, etc…</p>
+<p>Let’s fix that by adding an indent inside the <code class="docutils literal notranslate"><span class="pre">if</span></code> statement:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="kc">True</span><span class="p">:</span> 
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;hi &quot;&quot;+2+name)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;&lt;ipython-input-3-9dd1d6dac50b&gt;&quot;</span><span class="gt">, line </span><span class="mi">2</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;hi &quot;&quot;+2+name)</span>
+                        <span class="o">^</span>
+<span class="ne">SyntaxError</span>: EOL while scanning string literal
+</pre></div>
+</div>
+</div>
+</div>
+<p>Drats! Another <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code>! Something is wrong with this line. I’m going to work from left to right. First, the quotation marks are unbalanced. We can fix that.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="kc">True</span><span class="p">:</span> 
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;hi &quot;</span><span class="o">+</span><span class="mi">2</span><span class="o">+</span><span class="n">name</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">4</span><span class="o">-</span><span class="n">da5969d66cf3</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="k">if</span> <span class="kc">True</span><span class="p">:</span>
+<span class="ne">----&gt; </span><span class="mi">2</span>     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;hi &quot;</span><span class="o">+</span><span class="mi">2</span><span class="o">+</span><span class="n">name</span><span class="p">)</span>
+
+<span class="ne">TypeError</span>: can only concatenate str (not &quot;int&quot;) to str
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="typeerror">
+<h3><span class="section-number">1.8.1.3. </span><code class="docutils literal notranslate"><span class="pre">TypeError</span></code><a class="headerlink" href="#typeerror" title="Permalink to this headline">¶</a></h3>
+<p>I tried to add a number (int) to a string. Python doesn’t allow that.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="kc">True</span><span class="p">:</span> 
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;hi &quot;</span><span class="o">+</span><span class="n">name</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">5</span><span class="o">-</span><span class="mi">9</span><span class="n">b3a15405fe9</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="k">if</span> <span class="kc">True</span><span class="p">:</span>
+<span class="ne">----&gt; </span><span class="mi">2</span>     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;hi &quot;</span><span class="o">+</span><span class="n">name</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;name&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="nameerror">
+<h3><span class="section-number">1.8.1.4. </span><code class="docutils literal notranslate"><span class="pre">NameError</span></code><a class="headerlink" href="#nameerror" title="Permalink to this headline">¶</a></h3>
+<p>Python interpreter sees a word it does not recognize. You need to define it before it is used!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Jack&quot;</span>
+<span class="k">if</span> <span class="kc">True</span><span class="p">:</span> 
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;hi &quot;</span><span class="o">+</span><span class="n">name</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>hi Jack
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="handling-errors">
+<h2><span class="section-number">1.8.2. </span>Handling errors<a class="headerlink" href="#handling-errors" title="Permalink to this headline">¶</a></h2>
+<p>Syntax with pseudocode for <code class="docutils literal notranslate"><span class="pre">try-except</span></code> blocks, borrowed from an <a class="reference external" href="https://stackoverflow.com/a/31626974">answer on SO</a>:</p>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
+    <span class="n">try_this</span><span class="p">(</span><span class="n">whatever</span><span class="p">)</span>
+    
+<span class="k">except</span> <span class="n">SomeException</span><span class="p">:</span> 
+    <span class="c1"># this block runs only if the code inside &quot;try&quot; returns SomeException</span>
+    
+    <span class="n">handle_this</span><span class="p">()</span>
+    
+<span class="k">except</span> <span class="n">DiffException</span> <span class="k">as</span> <span class="n">the_exception</span><span class="p">:</span>  
+    <span class="c1"># you can handle multiple exceptions...</span>
+    <span class="c1"># this block runs only if the code inside &quot;try&quot; returns DiffException</span>
+    <span class="c1"># you can &quot;name&quot; your exception type, here &quot;as the_exception&quot; does that</span>
+    
+    <span class="n">handle_this_one</span><span class="p">(</span><span class="n">the_exception</span><span class="p">)</span>
+    
+<span class="k">else</span><span class="p">:</span> 
+    <span class="c1"># the else block only runs if no exceptions occur</span>
+    
+    <span class="n">do_something_if_no_exceptions</span><span class="p">()</span>
+
+<span class="k">finally</span><span class="p">:</span>
+    <span class="c1"># this block will execute no matter what, even if no exception,</span>
+    
+    <span class="n">always_does_this</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Avoid bare <code class="docutils literal notranslate"><span class="pre">except:</span></code> clauses. The idea is to handle <strong>expected</strong> errors.</p>
+</div>
+<div class="section" id="references">
+<h3><span class="section-number">1.8.2.1. </span>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h3>
+<p>I’d read through these pages for some walkthroughs and discussions of try-except:</p>
 <ol class="simple">
-<li><p>Define a problem/project in a valuable way: A clearly specified question with metrics for success and idea of impact. Always keep the big picture in mind!</p>
-<ul class="simple">
-<li><p>Valuable skill even if you never code again!</p></li>
-</ul>
-</li>
-<li><p>Work <em><strong>collaboratively</strong></em> on the problem.</p>
-<ul class="simple">
-<li><p>Interesting problems are <strong>big</strong> and rarely solo: Sir Edmund Hilary needed Tsenging Norgue to climb Everest.</p></li>
-<li><p>Valuable skill even if you never code again! Understanding how to manage how any team projects evolve (whether it is producing a document, or slides, or whatnot) is extremely valuable. Imagine spending a week on a report, and then your boss Jan<a class="footnote-reference brackets" href="#jan" id="id1">1</a> or your coworker Jean Ralphio<a class="footnote-reference brackets" href="#jean" id="id2">2</a> undoes your week of work by editing a version of the report that is a week old. ARRRRRG!</p></li>
-</ul>
-</li>
-<li><p>Acquire data and clean it. Age old wisdom tells us that if the input is crap, the output will be… Time spent on cleaning is often more valuable than time spent on modeling.</p></li>
-<li><p>Explore the data.</p></li>
-<li><p>Analysis using appropriate modeling tools. This is &lt;25% of the work on most projects.</p></li>
-<li><p>Deliver the project conclusions to higher ups in the form of clear business recommendations. Writing should always be geared to the audience, and managers typically want bottom lines, whereas technical leads need more technical justification.</p>
-<ul class="simple">
-<li><p>Valuable skill even if you never code again!</p></li>
-</ul>
-</li>
+<li><p><a class="reference external" href="https://stackoverflow.com/questions/16138232/is-it-a-good-practice-to-use-try-except-else-in-python">This StackOverflow discussion</a> has some really good answers talking about the whys and whens of <code class="docutils literal notranslate"><span class="pre">try-except</span></code> in python.</p></li>
+<li><p><a class="reference external" href="https://www.tutorialsteacher.com/python/exception-handling-in-python">Tutorialsteach</a></p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/tutorial/errors.html#handling-exceptions">Official Python docs</a></p></li>
 </ol>
-</div>
-<div class="section" id="from-here-to-there">
-<h2><span class="section-number">1.1.3. </span>From here to there…<a class="headerlink" href="#from-here-to-there" title="Permalink to this headline">¶</a></h2>
-<p>I’ve designed this class with the hope that you’ll be prepared and able to execute each of those steps.</p>
-<p><strong>By the end of the semester, your resume, should you choose to, can include your (burgeoning) proficiency with Python, Github, Machine Learning (ML) tools, web scraping, and data viz, in addition to describing your exploits on Github and the final course project.</strong></p>
-<p>So, in terms of data scientists, your journey this semester is hopefully something like:<a class="footnote-reference brackets" href="#me" id="id3">3</a></p>
-<p><img alt="" src="../../_images/sarahchange.png" /></p>
-<div class="section" id="our-bargain-not-faustian-i-hope">
-<h3><span class="section-number">1.1.3.1. </span>Our bargain (not Faustian, I hope)<a class="headerlink" href="#our-bargain-not-faustian-i-hope" title="Permalink to this headline">¶</a></h3>
-<p><strong>This class is ambitious!</strong> You will need to learn skills from computer science, statistics, and econometrics just so that we have the toolkit needed to begin analysis. I’m aiming to make each of those components accessible (e.g. we won’t prove any theorems, and I’m boiling down programming to essentials). Still, that menu of skills is not easy to acquire (that’s why employers pay $$$ for it!), and…</p>
-<p><strong>THUS: You will have to work outside of class quite a bit.</strong></p>
-<p>And if you’ve never programmed:</p>
-<ul class="simple">
-<li><p>I swear, youngens these days have it so much easier!<a class="footnote-reference brackets" href="#youngens" id="id4">4</a></p></li>
-<li><p><strong>Seriously, getting Python up and running has never been quicker, and we will have some working code soon!</strong></p></li>
-<li><p>You will be frustrated at times. This is natural! No programmer exists who has not cursed their computer to the depths of hell.</p>
-<ul>
-<li><p>This is completely true: Half the time, it’s a silly typo on line 42 of your code. Like, you literally misspelled “regression” as “regresion”.</p></li>
-<li><p>Corollary: A lot of programming takes place after dark, under the influence of coffee and Red Bull. This is why you misspelled “regresion”. Try to program at times when you have a clearer mind :)</p></li>
-</ul>
-</li>
-<li><p>Overcoming those frustrating issues feels soooooo good. You’ll feel a sense of accomplishment. Fight for that!</p></li>
-<li><p>Your classmates are in it too, and they can, and surely will, help.</p></li>
-</ul>
-<p><strong>My half of the bargain:</strong> I will work just as hard as you throughout the semester to improve this new class. It’s experimental so some things (lectures, assignments) will succeed and aid you along that journey towards being Terminator 3 Linda Hamilton, and some things I try will fail. When something doesn’t work out, I’ll try to improve it.</p>
-<p><strong>Related: When you have questions in class, ask!</strong> Falling behind is costly, and asking a question is cheap. If you’re confused or having computer issues, someone else surely is too. If you’re stuck outside of class (homeworks, assignments, etc.), see the resources section of the website for a set of things you can do. After trying the options there, you can always… (come to the drop-in hours!)</p>
-<hr class="docutils" />
-<iframe src="https://docs.google.com/forms/d/e/1FAIpQLScLgqMhkNZHFJdeew7q2aAk5crzNdMss_NZ4vC4LKluUuo_pg/viewform?embedded=true" width="640" height="925" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe><hr class="footnotes docutils" />
-<dl class="footnote brackets">
-<dt class="label" id="jan"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
-<dd><img src="https://media.giphy.com/media/Onl9LxeKBz65W/giphy.gif" width="35%" > 
-</dd>
-<dt class="label" id="jean"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
-<dd><p><img src="https://media.giphy.com/media/znSg4sT0ivRdu/giphy.gif" width="35%" > <img src="https://media.giphy.com/media/HPMTb7m5ehAUE/giphy.gif" width="35%" ></p>
-</dd>
-<dt class="label" id="me"><span class="brackets"><a class="fn-backref" href="#id3">3</a></span></dt>
-<dd><p>I guess that makes me your old assistant on the journey… <img alt="" src="../../_images/oldarnold.jpg" /></p>
-</dd>
-<dt class="label" id="youngens"><span class="brackets"><a class="fn-backref" href="#id4">4</a></span></dt>
-<dd><img src="https://i.imgflip.com/3kc97l.jpg" width="35%"/>
-</dd>
-</dl>
 </div>
 </div>
 </div>
@@ -631,8 +740,8 @@ Lehigh pay</label><div class="tabbed-content docutils">
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="00_Getting_Started.html" title="previous page"><span class="section-number">1. </span>Getting the band together</a>
-    <a class='right-next' id="next-link" href="02_Setup.html" title="next page"><span class="section-number">1.2. </span>Set up</a>
+    <a class='left-prev' id="prev-link" href="07_debugging.html" title="previous page"><span class="section-number">1.7. </span>Debugging - Making code work</a>
+    <a class='right-next' id="next-link" href="08_libraries.html" title="next page"><span class="section-number">1.9. </span>Installing libraries</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
