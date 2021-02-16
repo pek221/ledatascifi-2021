@@ -66,6 +66,7 @@
       title: "Python Basics"    
     - file: "content/01/07_debugging"
       title: "Debugging"    
+    - file: "content/01/07a_errors"
     - file: "content/01/08_libraries"
     - file: "content/01/09_gitignore"
       title: "Gitignore Files"    
