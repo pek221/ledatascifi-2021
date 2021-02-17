@@ -107,7 +107,7 @@
         - file: "content/03/02a_pandasTips"
           title: "Tips"      
         - file: "content/03/02b_pandasVocab"
-          title: "Vocab"      
+          title: "Vocab and Long vs Wide Data"      
         - file: "content/03/02c_commonFcns"
           title: "Common Functions"      
         - file: "content/03/02d_temp"
