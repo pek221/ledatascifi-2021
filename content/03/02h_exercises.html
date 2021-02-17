@@ -497,8 +497,8 @@
                 
   <div class="section" id="exercises">
 <h1><span class="section-number">3.2.8. </span>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h1>
-<p>Try each one alone, then check and compare with the person next to you.</p>
-<p>There are many ways to solve each, so if your approaches differ, explain it to each other!</p>
+<p>Try these and compare to a friend. There are many ways to solve each, so if your approaches differ, explain it to each other!</p>
+<p>The answers are available.<a class="footnote-reference brackets" href="#here" id="id1">1</a></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -509,13 +509,6 @@
 <span class="n">start</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2017</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="c1"># you can specify start and end dates this way</span>
 <span class="n">end</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2021</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">27</span><span class="p">)</span>
 <span class="n">macro_df</span> <span class="o">=</span> <span class="n">pdr</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">DataReader</span><span class="p">([</span><span class="s1">&#39;GDP&#39;</span><span class="p">,</span><span class="s1">&#39;CPIAUCSL&#39;</span><span class="p">,</span><span class="s1">&#39;UNRATE&#39;</span><span class="p">],</span> <span class="s1">&#39;fred&#39;</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">)</span>
-
-<span class="c1"># prof demo+vocab coverage (students should type out if possible)</span>
-<span class="c1">#    vocab: df, rows, columns/vars (accessing/series), index, </span>
-<span class="c1">#    how to: access 1 var (note: series), access multiple vars</span>
-<span class="c1">#            access col names, rename (some cols, all cols via set_axis(1))</span>
-<span class="c1">#            access index</span>
-<span class="c1">#    index (reset and set)</span>
 </pre></div>
 </div>
 </div>
@@ -529,15 +522,7 @@
 <li><p>access, print, and change column names</p></li>
 <li><p>access, print, reset, and set the index</p></li>
 </ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">start</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2017</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="c1"># you can specify start and end dates this way</span>
-<span class="n">end</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2021</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">27</span><span class="p">)</span>
-<span class="n">macro_df</span> <span class="o">=</span> <span class="n">pdr</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">DataReader</span><span class="p">([</span><span class="s1">&#39;GDP&#39;</span><span class="p">,</span><span class="s1">&#39;CPIAUCSL&#39;</span><span class="p">,</span><span class="s1">&#39;UNRATE&#39;</span><span class="p">],</span> <span class="s1">&#39;fred&#39;</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
+<p>Questions:</p>
 <ul class="simple">
 <li><p>Q0: Do each of the four new golden rules for initial data exploration, from the lecture.</p></li>
 <li><p>Q1: What is the second series above?</p></li>
@@ -620,6 +605,12 @@
 </div>
 </div>
 </div>
+<hr class="footnotes docutils" />
+<dl class="footnote brackets">
+<dt class="label" id="here"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p><a class="reference internal" href="02i_answers.html"><span class="doc std std-doc">Here they are.</span></a></p>
+</dd>
+</dl>
 </div>
 </div>
 
