@@ -337,7 +337,7 @@
      </li>
      <li class="toctree-l3">
       <a class="reference internal" href="02f_chains.html">
-       3.2.6. Readable Chains
+       3.2.6. Pandas Chains
       </a>
      </li>
      <li class="toctree-l3">
@@ -568,7 +568,17 @@
 </div>
 <div class="section" id="part-3">
 <h2><span class="section-number">3.2.8.3. </span>Part 3<a class="headerlink" href="#part-3" title="Permalink to this headline">¶</a></h2>
-<p>First, I’ll load January data on unemployment, the Case-Shiller housing index, and median household income in three states (CA/MI/PA).</p>
+<p>First, I’ll do the work to load January data on unemployment, the Case-Shiller housing index, and median household income in three states (CA/MI/PA).</p>
+<p>Then, we’ll answer some questions</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Run this block yourself, line-by-line, and part-by-part to figure out what I’m doing.</p>
+<p>For example, just run the first three lines to download the data, then run</p>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="n">macro_data</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s1">&#39;Y&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Try other arguments inside resample to see what works (and what it does) and what doesn’t work.</p>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># LOAD DATA AND CONVERT TO ANNUAL</span>

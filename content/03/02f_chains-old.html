@@ -335,7 +335,7 @@
      </li>
      <li class="toctree-l3">
       <a class="reference internal" href="02f_chains.html">
-       3.2.6. Readable Chains
+       3.2.6. Pandas Chains
       </a>
      </li>
      <li class="toctree-l3">
@@ -397,7 +397,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/content/03/02f_chains-Copy1.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/content/03/02f_chains-old.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -417,10 +417,10 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/LeDataSciFi/ledatascifi-2021/issues/new?title=Issue%20on%20page%20%2Fcontent/03/02f_chains-Copy1.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/LeDataSciFi/ledatascifi-2021/issues/new?title=Issue%20on%20page%20%2Fcontent/03/02f_chains-old.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        <a class="edit-button" href="https://github.com/LeDataSciFi/ledatascifi-2021/edit/main/content/03/02f_chains-Copy1.ipynb"><button
+        <a class="edit-button" href="https://github.com/LeDataSciFi/ledatascifi-2021/edit/main/content/03/02f_chains-old.ipynb"><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
     </div>
@@ -440,7 +440,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/LeDataSciFi/ledatascifi-2021/main?urlpath=lab/tree/content/03/02f_chains-Copy1.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/LeDataSciFi/ledatascifi-2021/main?urlpath=lab/tree/content/03/02f_chains-old.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../../_static/images/logo_binder.svg"
@@ -448,7 +448,7 @@
         
         
         
-        <a class="colab-button" href="https://colab.research.google.com/github/LeDataSciFi/ledatascifi-2021/blob/main/content/03/02f_chains-Copy1.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+        <a class="colab-button" href="https://colab.research.google.com/github/LeDataSciFi/ledatascifi-2021/blob/main/content/03/02f_chains-old.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
                 title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
                     src="../../_static/images/logo_colab.png"
                     alt="Interact on Colab">Colab</button></a>
@@ -514,6 +514,26 @@
                 
   <div class="section" id="using-method-chains-to-create-more-readable-code">
 <h1>Using “method chains” to create more readable code<a class="headerlink" href="#using-method-chains-to-create-more-readable-code" title="Permalink to this headline">¶</a></h1>
+<p>This page is about “chaining,” which is a <em>technique</em> (as opposed to a function) I use when writing <code class="docutils literal notranslate"><span class="pre">pandas</span></code> code, to take advantage of this fact about python:</p>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="p">(</span> 
+    <span class="c1"># anything between these parens</span>
+    <span class="c1"># is interpreted as one line of code</span>
+    <span class="c1"># --&gt; long lines of code can be visually broken up</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<p>Code chains</p>
+<ul class="simple">
+<li><p>help us write more <strong>readable</strong> code - the “code and the flow of execution are from top to bottom, and the function parameters are always near the function itself, unlike with heavily nested function calls”, which are common in “normal” python scripts (<a class="reference external" href="https://tomaugspurger.github.io/method-chaining">source: a core <code class="docutils literal notranslate"><span class="pre">pandas</span></code> dev</a>)</p></li>
+<li><p>“emphasize a correctly [and sequentially] structured interactive approach to working with data, where each operation is a ‘next step’ after the last.” (<a class="reference external" href="https://www.kaggle.com/residentmario/method-chaining-reference">source</a>)</p></li>
+<li><p>lessen the need to create and mentally track temporary variables</p></li>
+<li><p>are easy to debug: comment out operations that are failing until you fix them</p></li>
+<li><p>you can have comments <em>within</em> the chains (like the example above!)</p></li>
+</ul>
+<div class="warning admonition">
+<p class="admonition-title">Let’s learn about chains via example.</p>
+<p>The “material” on this page is within the tabs below</p>
+</div>
 <div class="section" id="game-of-thrones-example-slicing-group-stats-and-plotting">
 <h2>Game of Thrones example - slicing, group stats, and plotting<a class="headerlink" href="#game-of-thrones-example-slicing-group-stats-and-plotting" title="Permalink to this headline">¶</a></h2>
 <p>I didn’t find an off the shelf dataset to run our seminal analysis from last week, but I found <a class="reference external" href="https://www.kaggle.com/dhanushkishore/impact-of-game-of-thrones-on-us-baby-names">an analysis</a> that explored if Game of Thrones prompted parents to start naming their children differently. The following is inspired by that, but uses pandas to acquire and wrangle our data in a “Tidyverse”-style (how R would do it) flow.</p>
@@ -581,7 +601,7 @@
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.lines.Line2D at 0x2dd2103ad48&gt;
 </pre></div>
 </div>
-<img alt="../../_images/02f_chains-Copy1_4_1.png" src="../../_images/02f_chains-Copy1_4_1.png" />
+<img alt="../../_images/02f_chains-old_4_1.png" src="../../_images/02f_chains-old_4_1.png" />
 </div>
 </div>
 </div>
@@ -609,7 +629,7 @@
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.lines.Line2D at 0x2dd1e387bc8&gt;
 </pre></div>
 </div>
-<img alt="../../_images/02f_chains-Copy1_6_1.png" src="../../_images/02f_chains-Copy1_6_1.png" />
+<img alt="../../_images/02f_chains-old_6_1.png" src="../../_images/02f_chains-old_6_1.png" />
 </div>
 </div>
 </div>
@@ -644,7 +664,7 @@ without saving.</p>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.lines.Line2D at 0x2dd1f726308&gt;
 </pre></div>
 </div>
-<img alt="../../_images/02f_chains-Copy1_8_1.png" src="../../_images/02f_chains-Copy1_8_1.png" />
+<img alt="../../_images/02f_chains-old_8_1.png" src="../../_images/02f_chains-old_8_1.png" />
 </div>
 </div>
 <p>To make this readable, we write a parentheses over multiple lines</p>
@@ -672,7 +692,7 @@ without saving.</p>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;WOW THAT WAS EASY TO WRITE AND SHARE&#39;)
 </pre></div>
 </div>
-<img alt="../../_images/02f_chains-Copy1_10_1.png" src="../../_images/02f_chains-Copy1_10_1.png" />
+<img alt="../../_images/02f_chains-old_10_1.png" src="../../_images/02f_chains-old_10_1.png" />
 </div>
 </div>
 <p><strong>WOW. That’s nice code!</strong></p>
@@ -696,7 +716,7 @@ without saving.</p>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;PEOPLE NAMED THEIR KID KHALEESI&#39;)
 </pre></div>
 </div>
-<img alt="../../_images/02f_chains-Copy1_12_1.png" src="../../_images/02f_chains-Copy1_12_1.png" />
+<img alt="../../_images/02f_chains-old_12_1.png" src="../../_images/02f_chains-old_12_1.png" />
 </div>
 </div>
 <p><strong>BUT IT COULD BE WORSE</strong></p>
@@ -716,7 +736,7 @@ without saving.</p>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;Alabama, wow...Krymson, really?&#39;)
 </pre></div>
 </div>
-<img alt="../../_images/02f_chains-Copy1_14_1.png" src="../../_images/02f_chains-Copy1_14_1.png" />
+<img alt="../../_images/02f_chains-old_14_1.png" src="../../_images/02f_chains-old_14_1.png" />
 </div>
 </div>
 </div>

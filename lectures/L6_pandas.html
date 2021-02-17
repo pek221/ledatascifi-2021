@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>&lt;no title&gt; &#8212; LeDataSciFi-2021</title>
+    <title>Hello! Today: &#8212; LeDataSciFi-2021</title>
     
   <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -397,9 +397,9 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/lectures/README.md"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/lectures/L6_pandas.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
+                data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
             onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
@@ -417,10 +417,10 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/LeDataSciFi/ledatascifi-2021/issues/new?title=Issue%20on%20page%20%2Flectures/README.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/LeDataSciFi/ledatascifi-2021/issues/new?title=Issue%20on%20page%20%2Flectures/L6_pandas.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        <a class="edit-button" href="https://github.com/LeDataSciFi/ledatascifi-2021/edit/main/lectures/README.md"><button
+        <a class="edit-button" href="https://github.com/LeDataSciFi/ledatascifi-2021/edit/main/lectures/L6_pandas.ipynb"><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
     </div>
@@ -435,6 +435,28 @@
 
         <!-- Launch buttons -->
 
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/LeDataSciFi/ledatascifi-2021/main?urlpath=lab/tree/lectures/L6_pandas.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/LeDataSciFi/ledatascifi-2021/blob/main/lectures/L6_pandas.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="../_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        
+    </div>
+</div>
+
     </div>
 
     <!-- Table of contents -->
@@ -444,7 +466,56 @@
             <i class="fas fa-list"></i> Contents
         </div>
         <nav id="bd-toc-nav">
-            <ul class="simple nav section-nav flex-column">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#notes">
+   Notes:
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#peer-reviews">
+   Peer reviews
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#and-now">
+   “And now…”
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pandas">
+   Pandas
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#today-pandas">
+   Today: Pandas
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#next-class">
+     Next class
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#student-demos">
+     Student demos
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#summary">
+   Summary
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#shut-down-restart-your-kernal-and-run-code-save-all-open-files-close-jlab-commit-and-push-your-class-notes-repo">
+     Shut down: Restart your kernal and run code, save all open files, close JLab, commit and push your class notes repo.
+    </a>
+   </li>
+  </ul>
+ </li>
 </ul>
 
         </nav>
@@ -456,13 +527,126 @@
         
               <div>
                 
-  <p>How to turn these <code class="docutils literal notranslate"><span class="pre">ipynb</span></code> files into slides:</p>
-<p>One at a time:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">C</span><span class="p">:</span>\<span class="n">Users</span>\<span class="n">DonsLaptop</span>\<span class="n">Desktop</span>\<span class="n">GitHub</span>\<span class="n">ledatascifi</span><span class="o">-</span><span class="mi">2021</span>
-<span class="n">jupyter</span> <span class="n">nbconvert</span> <span class="s2">&quot;L1_intro_github.ipynb&quot;</span> <span class="o">--</span><span class="n">to</span> <span class="n">slides</span> 
+  <div class="section" id="hello-today">
+<h1>Hello! Today:<a class="headerlink" href="#hello-today" title="Permalink to this headline">¶</a></h1>
+<ol class="simple">
+<li><p>Before class:</p>
+<ul class="simple">
+<li><p>Fetch your class notes repo and the lecture repo</p></li>
+<li><p>Copy pandas exercises from lectures (<code class="docutils literal notranslate"><span class="pre">content/03/02h_exercises.ipynb</span></code>) to your notes folder</p></li>
+<li><p>Open in JLab: exercises, a ipynb for taking notes, and a ipynb inside <code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">notes/codebook</span></code> to save a “recipe” today</p></li>
+</ul>
+</li>
+<li><p>Getting dirty with <code class="docutils literal notranslate"><span class="pre">pandas</span></code></p></li>
+</ol>
+<div class="section" id="notes">
+<h2>Notes:<a class="headerlink" href="#notes" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Please fill out a short check in survey: <a class="reference external" href="https://forms.gle/3C56TPPJsWukKw318">https://forms.gle/3C56TPPJsWukKw318</a></p></li>
+<li><p>Popular request: I’m going to record, but remember participation credits</p></li>
+</ul>
+</div>
+<div class="section" id="peer-reviews">
+<h2>Peer reviews<a class="headerlink" href="#peer-reviews" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>Tweaked instructioons:</p>
+<ul class="simple">
+<li><p>Go to <span class="xref myst">github.com</span></p></li>
+<li><p>On the left side of the page, under repositories, you’ll see that you have access to assignments for two peers</p></li>
+</ul>
+</li>
+<li><p>Review progress: 37/96 (great!)</p></li>
+</ol>
+</div>
+<div class="section" id="and-now">
+<h2>“And now…”<a class="headerlink" href="#and-now" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="pandas">
+<h2>Pandas<a class="headerlink" href="#pandas" title="Permalink to this headline">¶</a></h2>
+<p><img alt="" src="https://media.giphy.com/media/KyBX9ektgXWve/source.gif" /></p>
+</div>
+<div class="section" id="today-pandas">
+<h2>Today: Pandas<a class="headerlink" href="#today-pandas" title="Permalink to this headline">¶</a></h2>
+<p>From last class:</p>
+<blockquote>
+<div><p>Exploring the incredible FRED dataset: <a class="reference external" href="https://fred.stlouisfed.org/">https://fred.stlouisfed.org/</a></p>
+<ul>
+<li><p>Unreal repository of data:</p>
+<blockquote>
+<div><p>Download, graph, and track <strong>786,000 US and international time series from 103 sources.</strong></p>
+</div></blockquote>
+</li>
+<li><p>Check out “at a glance” and “popular series”</p></li>
+<li><p>Usable in other classes: easy to download, clean, modify, analyze, plot all that in seconds of coding!</p></li>
+</ul>
+</div></blockquote>
+<p>Today we will cover:</p>
+<ul>
+<li><p>EDA (disc, and a simple recipe!)</p></li>
+<li><p>pseudo coding and dev’ing code</p></li>
+<li><p>pandas functions: assign, pivot_tables, …</p></li>
+<li><p>“for-loops” –&gt; groupby</p></li>
+<li><p>chaining (3.2.6!) / lambda functions</p>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="p">(</span> <span class="c1"># anything between these parens</span>
+<span class="c1"># is &quot;one&quot; line of code</span>
+<span class="p">)</span>
 </pre></div>
 </div>
-<p>A second option that might be nice to have is a terminal file that automatically runs that for all <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code> files in this folder. Something to do later…</p>
+</li>
+</ul>
+<p>Now, let’s practice the exercises in 3.2.8.</p>
+<ul class="simple">
+<li><p>Q0-Q3: breakout rooms, then call/response</p>
+<ul>
+<li><p>An “EDA recipe”</p></li>
+</ul>
+</li>
+<li><p>Q4 (+Q5?):</p>
+<ul>
+<li><p>Demos: Natalie and Christian; Alina and Anders</p></li>
+<li><p>Build on this to show: chaining, assign, lambda, groupby</p></li>
+</ul>
+</li>
+<li><p>Q6+Q7</p>
+<ul>
+<li><p>Reshaping+index (important to solving problems!)</p></li>
+</ul>
+</li>
+</ul>
+<div class="section" id="next-class">
+<h3>Next class<a class="headerlink" href="#next-class" title="Permalink to this headline">¶</a></h3>
+<p>We start graphing!</p>
+</div>
+<div class="section" id="student-demos">
+<h3>Student demos<a class="headerlink" href="#student-demos" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Task: plot how median income has evolved over time for PA</p>
+<ul>
+<li><p>Bonus: plot CA, PA, and MI on one graph (arguably easier than just one!)</p></li>
+<li><p>HINT: Use <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">seaborn</span> <span class="pre">as</span> <span class="pre">sns</span></code> to make the plot</p></li>
+</ul>
+</li>
+<li><p>Morning: Zhongrui (&#64;zhz221) and Chengming (&#64;chw221)</p></li>
+<li><p>Afternoon: Blaise (&#64;blaisemilanek) and Caitlin (&#64;cak320)</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+<p>We covered</p>
+<ul class="simple">
+<li><p>Planning/pseudo code</p></li>
+<li><p>EDA: some of the things to look for + a recipe</p></li>
+<li><p>Pandas: reshaping, creating vars, summarizing data</p></li>
+<li><p>Remember: In pandas “for-loops” = groupby (usually)</p></li>
+<li><p>Panda pros: chaining</p></li>
+</ul>
+<p><img alt="" src="https://media.giphy.com/media/H7x1H0veAJlo4/giphy.gif" /></p>
+<div class="section" id="shut-down-restart-your-kernal-and-run-code-save-all-open-files-close-jlab-commit-and-push-your-class-notes-repo">
+<h3>Shut down: Restart your kernal and run code, save all open files, close JLab, commit and push your class notes repo.<a class="headerlink" href="#shut-down-restart-your-kernal-and-run-code-save-all-open-files-close-jlab-commit-and-push-your-class-notes-repo" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {
