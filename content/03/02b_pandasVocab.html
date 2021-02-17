@@ -317,7 +317,7 @@
      </li>
      <li class="toctree-l3 current active">
       <a class="current reference internal" href="#">
-       3.2.2. Vocab
+       3.2.2. Vocab and Long vs Wide Data
       </a>
      </li>
      <li class="toctree-l3">
@@ -669,7 +669,13 @@
 <h3><span class="section-number">3.2.2.2.2. </span>Which shape should I use?<a class="headerlink" href="#which-shape-should-i-use" title="Permalink to this headline">¶</a></h3>
 <p><strong>A, nuanced:</strong> It depends on what you’re using the data for!</p>
 <ul class="simple">
-<li><p>I try to make my data “tidy” at the start of analysis. Tidy data is quicker to analyze!</p></li>
+<li><p>I try to make my data “tidy” at the start of analysis. Tidy data is quicker to analyze!</p>
+<ul>
+<li><p>The “long” dataset is the only one above that is tidy</p></li>
+<li><p><a class="reference external" href="https://cran.r-project.org/web/packages/tidyr/vignettes/tidy-data.html">This is a good description</a> of what “tidy” is, what “messy” often is, and how to tidy messy data. Focus not on the code, but the textual ideas and the data (shown as code comments)</p></li>
+<li><p>On the main <span class="xref myst">resources page</span>, there is a link to a resource I highly recommend, <a class="reference external" href="https://web.stanford.edu/~gentzkow/research/CodeAndData.xhtml">Coding best practices, and project management</a>. “Chapter 5” is about tidy data, even though they never use the phrase.</p></li>
+</ul>
+</li>
 <li><p>Seaborn likes plotting long data, while pandas likes plotting wide data</p></li>
 </ul>
 </div>
