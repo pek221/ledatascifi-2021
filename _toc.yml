@@ -115,7 +115,7 @@
         - file: "content/03/02e_eda_golden"
           title: "Golden Rules + EDA"      
         - file: "content/03/02f_chains"
-          title: "Readable Chains" 
+          title: "Pandas Chains" 
         - file: "content/03/02g_commontasks"
           title: "Common Tasks" 
         - file: "content/03/02h_exercises"

@@ -9,7 +9,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
 
-<title>L5_numpypandas slides</title>
+<title>L6_pandas slides</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -13208,15 +13208,17 @@ a.anchor-link {
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Hello!-Today:">Hello! Today:<a class="anchor-link" href="#Hello!-Today:">&#182;</a></h1><ol>
-<li>Before class: Fetch your class notes repo and the lecture repo, and open JLab to the class notes repo</li>
-<li>Afternoon: Props Theo (@schemesmith) for first website corrections! Demo?</li>
-<li>Discussing ASGN1 and peer reviews</li>
-<li>A brief discussion of <code>numpy</code></li>
+<li>Before class: <ul>
+<li>Fetch your class notes repo and the lecture repo</li>
+<li>Copy pandas exercises from lectures (<code>content/03/02h_exercises.ipynb</code>) to your notes folder</li>
+<li>Open in JLab: exercises, a ipynb for taking notes, and a ipynb inside <code>class notes/codebook</code> to save a "recipe" today</li>
+</ul>
+</li>
 <li>Getting dirty with <code>pandas</code></li>
 </ol>
 <h3 id="Notes:">Notes:<a class="anchor-link" href="#Notes:">&#182;</a></h3><ul>
 <li>Please fill out a short check in survey: <a href="https://forms.gle/3C56TPPJsWukKw318">https://forms.gle/3C56TPPJsWukKw318</a> </li>
-<li>I'm going to try to record the afternoon session today</li>
+<li>Popular request: I'm going to record, but remember participation credits</li>
 </ul>
 
 </div>
@@ -13226,49 +13228,12 @@ a.anchor-link {
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Peer-reviews">Peer reviews<a class="anchor-link" href="#Peer-reviews">&#182;</a></h2><ol>
-<li>You'll get added to two classmate's submissions today<ul>
-<li>A chance to learn and teach!</li>
-<li>Go to <a href="github.com">github.com</a>. On the left side of the page, under repositories, you'll see that you have access to assignments for two peers. </li>
+<li>Tweaked instructioons:<ul>
+<li>Go to <a href="github.com">github.com</a></li>
+<li>On the left side of the page, under repositories, you'll see that you have access to assignments for two peers</li>
 </ul>
 </li>
-<li>For each, open the answer key in the repo and click on the link to the survey<ul>
-<li>Most of the review can be done looking at the repo online, but...</li>
-</ul>
-</li>
-</ol>
-
-</div>
-</div>
-</div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>⭐⭐⭐ <strong>MOST IMPORTANT: You must clone the repo to your computer and run the code ON YOUR COMPUTER</strong> (The essential ingredient of collaborative coding, and a fundamental takeaway from class) ⭐⭐⭐</p>
-
-</div>
-</div>
-</div></div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>If you have questions while doing reviews</p>
-<ul>
-<li>if it is a general question ("Is XYZ correct?"): @classmates, but don't identify the reviewee</li>
-<li>if it is sensitive: email Jason (and CC me)  </li>
-</ul>
-
-</div>
-</div>
-</div></div></section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="ASGN1-review-demo-+-working-through-a-few-problems">ASGN1 review demo + working through a few problems<a class="anchor-link" href="#ASGN1-review-demo-+-working-through-a-few-problems">&#182;</a></h2><ol>
-<li>Volunteer? I'll submit a full feedback form for your assignment<ul>
-<li>Else I have an anon folder I can use</li>
-</ul>
-</li>
-<li>Poll - which questions from the assignment should we discuss the solution to?</li>
+<li>Review progress: 37/96 (great!)</li>
 </ol>
 
 </div>
@@ -13277,23 +13242,14 @@ a.anchor-link {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Numpy-summary">Numpy summary<a class="anchor-link" href="#Numpy-summary">&#182;</a></h2><p>By convention: <code>import numpy as np</code></p>
-<p>Why is there a chapter in the book on it?</p>
-
+<h2 id="&quot;And-now...&quot;">"And now..."<a class="anchor-link" href="#&quot;And-now...&quot;">&#182;</a></h2>
 </div>
 </div>
 </div><div class="fragment">
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<ol>
-<li>(<code>np</code> 🤝 Speed) + (<code>np</code> 🤝 <code>pandas</code>) = (<code>pandas</code> 🤝 speed)</li>
-<li>(<code>np</code> 🤝 Extra fncs) + (<code>np</code> 🤝 <code>pandas</code>) = (<code>pandas</code> 🤝 Extra fncs)<ul>
-<li><code>np.nan</code>, <code>np.median()</code>, <code>np.percentile()</code>, etc</li>
-<li>near C speeds on execution, written with python simplicity</li>
-</ul>
-</li>
-</ol>
+<h2 id="Pandas">Pandas<a class="anchor-link" href="#Pandas">&#182;</a></h2><p><img src="https://media.giphy.com/media/KyBX9ektgXWve/source.gif" alt=""></p>
 
 </div>
 </div>
@@ -13301,225 +13257,50 @@ a.anchor-link {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>From the <a href="https://numpy.org/doc/stable/user/whatisnumpy.html">official documentation</a></p>
-<blockquote><p>NumPy is the fundamental package for scientific computing in Python. It provides</p>
+<h2 id="Today:-Pandas">Today: Pandas<a class="anchor-link" href="#Today:-Pandas">&#182;</a></h2><p>From last class:</p>
+<blockquote><p>Exploring the incredible FRED dataset: <a href="https://fred.stlouisfed.org/">https://fred.stlouisfed.org/</a></p>
 <ul>
-<li>a multidimensional array object, </li>
-<li>various derived objects (such as masked arrays and matrices), </li>
-<li>an assortment of routines for fast operations on arrays, including mathematical, logical, shape manipulation, sorting, selecting, I/O, discrete Fourier transforms, basic linear algebra, basic statistical operations, random simulation and much more.</li>
-</ul>
-<p>[A lot of Data Sci packages are built using NumPy. In order to efficiently use them... one also needs to know how to use NumPy arrays.]</p>
-</blockquote>
-
-</div>
-</div>
-</div></section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="NP-reference">NP reference<a class="anchor-link" href="#NP-reference">&#182;</a></h3><p><a href="numpy.org/doc">numpy.org/doc</a> has pages with</p>
-<ul>
-<li>the "absolute basics" start here (very good)</li>
-<li>quickstart guide (next)</li>
-<li>how-to section</li>
-</ul>
-
-</div>
-</div>
-</div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>What numpy skills should you focus on?</p>
-<ol>
-<li>Indexing (v similar to Py, but some extra features)</li>
-<li>"Masking" (useful for filters in pandas, and creating variables)</li>
-<li>What functions are available</li>
-<li>If you use anything "random" in your code, (basically) always set a seed!<ul>
-<li><code>np</code> has updated <code>np.random</code> and seeding has changed. <a href="https://numpy.org/doc/stable/reference/random/bit_generators/index.html#seeding-and-entropy">See the doc's seeding page</a></li>
-</ul>
-</li>
-</ol>
-<p><em>Note: We will basically only use 1D arrays (simplifies things)</em></p>
-
-</div>
-</div>
-</div></div></section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="In-class-NP-examples">In-class NP examples<a class="anchor-link" href="#In-class-NP-examples">&#182;</a></h2><ol>
-<li>Indexing looks the same (at least for 1D arrays):</li>
-</ol>
-
-</div>
-</div>
-</div><div class="fragment">
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[1]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="n">myray</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">15</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;myray:&quot;</span><span class="p">,</span> <span class="n">myray</span><span class="p">)</span> 
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;slice:&quot;</span><span class="p">,</span> <span class="n">myray</span><span class="p">[</span><span class="mi">6</span><span class="p">:</span><span class="mi">11</span><span class="p">])</span> <span class="c1"># pick the 6-10th elements</span>
-<span class="c1"># quick try: pick the odd elements</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>myray: [ 0  1  2  3  4  5  6  7  8  9 10 11 12 13 14]
-slice: [ 6  7  8  9 10]
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div></div></section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="One-in-class-NP-example">One in-class NP example<a class="anchor-link" href="#One-in-class-NP-example">&#182;</a></h2><ol>
-<li>Indexing looks the same (at least for 1D arrays)</li>
-<li>Booleans and masking</li>
-</ol>
-
-</div>
-</div>
-</div><div class="fragment">
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># create a random vector (every run of this --&gt; diff #s)</span>
-<span class="kn">from</span> <span class="nn">numpy.random</span> <span class="kn">import</span> <span class="n">default_rng</span>
-<span class="n">rg</span> <span class="o">=</span> <span class="n">default_rng</span><span class="p">()</span>
-<span class="n">myray</span> <span class="o">=</span> <span class="n">rg</span><span class="o">.</span><span class="n">standard_normal</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;myray:&quot;</span><span class="p">,</span> <span class="n">myray</span><span class="p">)</span> 
-
-<span class="c1"># Q: how can you always select the positive elements from this?</span>
-<span class="c1"># prof demo: booleans, a single condition--&gt;bool, </span>
-<span class="c1">#            using booleans on an array/list, </span>
-<span class="c1">#            indexing/filtering via booleans as &quot;masks&quot;</span>
-<span class="c1">#            then answer</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>myray: [ 1.33145787  0.54058088 -0.06731178 -0.88356257 -0.09785319]
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div></div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="PANDAS">PANDAS<a class="anchor-link" href="#PANDAS">&#182;</a></h2><ol>
-<li>Cover: 3.2.0, 3.2.1</li>
-<li>How do I?  --&gt; 3.2.3 is a good quick resource</li>
-<li>Exploring the incredible FRED dataset: <a href="https://fred.stlouisfed.org/">https://fred.stlouisfed.org/</a><ul>
 <li>Unreal repository of data:<blockquote><p>Download, graph, and track <strong>786,000 US and international time series from 103 sources.</strong></p>
 </blockquote>
 </li>
 <li>Check out "at a glance" and "popular series"</li>
 <li>Usable in other classes: easy to download, clean, modify, analyze, plot all that in seconds of coding!</li>
 </ul>
-</li>
-</ol>
+</blockquote>
 
 </div>
 </div>
 </div></section><section>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">datetime</span>
-<span class="kn">import</span> <span class="nn">pandas_datareader</span> <span class="k">as</span> <span class="nn">pdr</span> <span class="c1"># if error, run: !pip install pandas_datareader </span>
-<span class="n">start</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2017</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="c1"># you can specify start and end dates this way</span>
-<span class="n">end</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2021</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">27</span><span class="p">)</span>
-<span class="n">macro_df</span> <span class="o">=</span> <span class="n">pdr</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">DataReader</span><span class="p">([</span><span class="s1">&#39;GDP&#39;</span><span class="p">,</span><span class="s1">&#39;CPIAUCSL&#39;</span><span class="p">,</span><span class="s1">&#39;UNRATE&#39;</span><span class="p">],</span> <span class="s1">&#39;fred&#39;</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">)</span>
-
-<span class="c1"># prof demo+vocab coverage (students should type out if possible)</span>
-<span class="c1">#    vocab: df, rows, columns/vars (accessing/series), index, </span>
-<span class="c1">#    how to: access 1 var (note: series), access multiple vars</span>
-<span class="c1">#            access col names, rename (some cols, all cols via set_axis(1))</span>
-<span class="c1">#            access index</span>
-<span class="c1">#    index (reset and set)</span>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Today we will cover:</p>
+<ul>
+<li>EDA (disc, and a simple recipe!)</li>
+<li>pseudo coding and dev'ing code</li>
+<li>pandas functions: assign, pivot_tables, ...</li>
+<li>"for-loops" --&gt; groupby</li>
+<li>chaining (3.2.6!) / lambda functions <div class="highlight"><pre><span></span><span class="p">(</span> <span class="c1"># anything between these parens</span>
+  <span class="c1"># is &quot;one&quot; line of code</span>
+  <span class="p">)</span>
 </pre></div>
-
-    </div>
-</div>
-</div>
-
-</div></section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="More-practice">More practice<a class="anchor-link" href="#More-practice">&#182;</a></h3><p>We should start the <code>pandas</code> exercises. Let's at least copy the code to our notebooks.</p>
-<p>If time, let's get started... try the pre-set breakout rooms.</p>
-<p>We will cover:</p>
-<ul>
-<li>EDA (see 3.2.5)</li>
-<li>assign/create variable</li>
-<li>
-<pre><code>(
-      codechains (3.2.6!)
-   )</code></pre>
 </li>
-<li>take care: temp vs permanent (3.2.4)</li>
-<li>for loops/groupby</li>
 </ul>
-
-</div>
-</div>
-</div></section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Next-class">Next class<a class="anchor-link" href="#Next-class">&#182;</a></h3><p>Will resume the <code>pandas</code> exercises next class, ⭐⭐ during which we will have our first student led demos. ⭐⭐</p>
+<p>Now, let's practice the exercises in 3.2.8.</p>
 <ul>
-<li>Morning: Natalie and Christian should solve Q4 (bonus: Q5). </li>
-<li>Afternoon: Alina and Anders will demo their solutions to Q4 (bonus: Q5).</li>
+<li>Q0-Q3: breakout rooms, then call/response<ul>
+<li>An "EDA recipe"</li>
 </ul>
-<h3 id="Student-demos">Student demos<a class="anchor-link" href="#Student-demos">&#182;</a></h3><ul>
-<li>Everyone will do a couple throughout the semester</li>
-<li>Describe your approach (pseudocode) and then show and explain code step by step</li>
-<li>Low stakes - typically small problems</li>
-<li>Varieties: single or team show-and-tell, compare/contrast/discuss</li>
+</li>
+<li>Q4 (+Q5?): <ul>
+<li>Demos: Natalie and Christian; Alina and Anders</li>
+<li>Build on this to show: chaining, assign, lambda, groupby</li>
+</ul>
+</li>
+<li>Q6+Q7<ul>
+<li>Reshaping+index (important to solving problems!)</li>
+</ul>
+</li>
 </ul>
 
 </div>
@@ -13528,13 +13309,33 @@ slice: [ 6  7  8  9 10]
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Summary">Summary<a class="anchor-link" href="#Summary">&#182;</a></h2><ul>
-<li>Remember the 15 minute rule on syntax errors and to LOOK AT YOUR DATA AND OBJECTS A LOT! (every incremental command, for now)</li>
-<li>Know for Numpy: indexing, masking, avail functions</li>
-<li>Pandas: LETS GO!</li>
+<h3 id="Next-class">Next class<a class="anchor-link" href="#Next-class">&#182;</a></h3><p>We start graphing!</p>
+<h3 id="Student-demos">Student demos<a class="anchor-link" href="#Student-demos">&#182;</a></h3><ul>
+<li>Task: plot how median income has evolved over time for PA <ul>
+<li>Bonus: plot CA, PA, and MI on one graph (arguably easier than just one!)</li>
+<li>HINT: Use <code>import seaborn as sns</code> to make the plot</li>
+</ul>
+</li>
+<li>Morning: Zhongrui (@zhz221) and Chengming (@chw221)</li>
+<li>Afternoon: Blaise (@blaisemilanek) and Caitlin (@cak320)</li>
+</ul>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Summary">Summary<a class="anchor-link" href="#Summary">&#182;</a></h2><p>We covered</p>
+<ul>
+<li>Planning/pseudo code</li>
+<li>EDA: some of the things to look for + a recipe</li>
+<li>Pandas: reshaping, creating vars, summarizing data</li>
+<li>Remember: In pandas "for-loops" = groupby (usually)</li>
+<li>Panda pros: chaining</li>
 </ul>
 <p><img src="https://media.giphy.com/media/H7x1H0veAJlo4/giphy.gif" alt=""></p>
-<h4 id="Shut-down:-Restart-your-kernel-and-run-code,-save-all-open-files,-close-JLab,-commit-and-push-your-class-notes-repo.">Shut down: Restart your kernel and run code, save all open files, close JLab, commit and push your class notes repo.<a class="anchor-link" href="#Shut-down:-Restart-your-kernel-and-run-code,-save-all-open-files,-close-JLab,-commit-and-push-your-class-notes-repo.">&#182;</a></h4>
+<h4 id="Shut-down:-Restart-your-kernal-and-run-code,-save-all-open-files,-close-JLab,-commit-and-push-your-class-notes-repo.">Shut down: Restart your kernal and run code, save all open files, close JLab, commit and push your class notes repo.<a class="anchor-link" href="#Shut-down:-Restart-your-kernal-and-run-code,-save-all-open-files,-close-JLab,-commit-and-push-your-class-notes-repo.">&#182;</a></h4>
 </div>
 </div>
 </div></section></section>
