@@ -45,4 +45,3 @@ def insufficient_but_starting_eda(df,cat_vars_list=None):
             print(var,"has",df[var].nunique(),"values and its top 10 most common are:")
             print(df[var].value_counts().head(10), '\n---')
         
-insufficient_but_starting_eda(macro_df,['UNRATE'])  
