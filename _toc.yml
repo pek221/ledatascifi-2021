@@ -122,5 +122,14 @@
           title: "Exercises" 
         - file: "content/03/02j_resourcesAndSum"
           title: "Summary and Resources" 
-      
+    - file: "content/03/04a-dataviz"
+      title: "Data Visualization"
+      sections:
+        - file: "content/03/04b-whyplot"
+        - file: "content/03/04c-makeplot"
+        - file: "content/03/04d-whichplot"
+        - file: "content/03/04e-visualEDA"
+        - file: "content/03/04f-betterplots"
+#        - file: "content/03/04g-lyingfigures"
+     
       
