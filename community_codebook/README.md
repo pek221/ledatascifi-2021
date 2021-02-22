@@ -15,7 +15,7 @@ If you are up for a tiny challenge, here is one slightly more elegant option:
 We will put any functions or recipes we develop here, when we find ourselves doing stuff repeatedly.
 
 The recipes and functions should be considered "under development". If you have ideas to improve or fix these functions, my _suggestion_ \* for submitting them is:
-1. Work on the propose file in your own `class notes/codebook` folder.
+1. Work on the proposed file in your own `class notes/codebook` folder.
 2. When you are done, come to this page in your browser (github.com/LeDataSciFi/ledatascifi-2021/community_codebook) and click "Add file".
 
 \*Advanced GH users would probably prefer an approach using a "fork". But that can bring up issues I'd rather avoid. 
