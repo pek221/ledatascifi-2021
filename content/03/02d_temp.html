@@ -593,7 +593,10 @@
 </div></div></div>
 </div>
 <p>This is useful if you want to  alter the variable <strong>temporarily</strong> (e.g. for a graph, or to just print it out, like I literally just did!).</p>
-<p><strong>But the object in memory wasn’t changed when I used <code class="docutils literal notranslate"><span class="pre">df.&lt;method&gt;</span></code>. See, here is the df in memory, and it wasn’t changed:</strong></p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><strong>But the object in memory wasn’t changed by the code above when I used <code class="docutils literal notranslate"><span class="pre">df.&lt;method&gt;</span></code>. See, here is the df in memory, and it wasn’t changed:</strong></p>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>  <span class="c1"># see, the object has no feet! this is the original obj!</span>

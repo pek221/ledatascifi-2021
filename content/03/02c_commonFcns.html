@@ -546,6 +546,10 @@ Manipulating data ⭐<div class="summary-down docutils">
 <div class="summary-up docutils">
 <svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="summary-content card-body docutils">
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p class="card-text"><code class="docutils literal notranslate"><span class="pre">df.assign(feet=df['height']//12)</span></code> will not add a “feet” variable to <code class="docutils literal notranslate"><span class="pre">df</span></code> permanently. If you want to save the new variable, you need to type <code class="docutils literal notranslate"><span class="pre">df</span> <span class="pre">=</span> <span class="pre">df.assign(feet=df['height']//12)</span></code>. <a class="reference internal" href="02d_temp.html"><span class="doc std std-doc">See the next page</span></a> for more.</p>
+</div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p class="card-text">Remember: replace <code class="docutils literal notranslate"><span class="pre">df</span></code> below with the name of the dataframe you’re working on!</p>
@@ -560,7 +564,7 @@ Manipulating data ⭐<div class="summary-down docutils">
 <tbody>
 <tr class="row-even"><td class="text-align:left"><p class="card-text">new variables or replace existing</p></td>
 <td class="text-align:left"><p class="card-text">assign</p></td>
-<td class="text-align:left"><p class="card-text"><code class="docutils literal notranslate"><span class="pre">df.assign(feet=df['height']//12)</span></code></p></td>
+<td class="text-align:left"><p class="card-text"><code class="docutils literal notranslate"><span class="pre">df.assign(feet=df['height']//12)</span></code> <br> <code class="docutils literal notranslate"><span class="pre">df['feet']</span> <span class="pre">=</span> <span class="pre">df['height']//12</span></code></p></td>
 </tr>
 <tr class="row-odd"><td class="text-align:left"><p class="card-text">filter or get subset of observations  <br> or, “drop rows”</p></td>
 <td class="text-align:left"><p class="card-text">⭐ query /  loc / iloc</p></td>
