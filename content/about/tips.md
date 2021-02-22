@@ -38,4 +38,12 @@ I wrote a section of tips in the [homework guidelines](../assignments/howto_do.h
 
 ## Look at your data and objects frequently! (Print them)
 
-As discussed [here](../01/07_debugging.html#seriously-print-your-data-and-objects-often) 
+As discussed [here](../01/07_debugging.html#seriously-print-your-data-and-objects-often).
+
+## Community Codebook
+
+You'll build your own codebook, a list of recipes you use repeatedly, as the semester goes on.
+
+The [community codebook](https://github.com/LeDataSciFi/ledatascifi-2021/tree/main/community_codebook) will be updated as the semester progresses. 
+
+
