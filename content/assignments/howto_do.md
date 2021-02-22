@@ -76,21 +76,22 @@ Your graders will download your repo on their computer, try to run your code, an
 ```
 
 ```{dropdown}  **TIP #1:** Check out the rubric for the assignment
-Each assignment has different grading criterion, which you'll see when when the assignment is posted. For a good summary, see the [guidelines for peer review page](howto_review). 
+Each assignment has different grading criterion, which you'll see in the rubric within each assignment's repo.  
 
 Generically and briefly, I'll say the important themes are:
 - reproducibility (Your peers should be able to download the folder to their computer and execute the main analysis file and receive back the same results you generated)
 - organization of the repo (can an outsider discern what is going on?)
 - the README.md file, which should describe the repo to readers 
-- the main analysis file. More on this in the next Q...
+- the main analysis file. More on this in the next tip...
 ```
 
 
 
 
 ```{dropdown}  **TIP #2:** Before you push what you think are your final changes to the master repo...
-1. Delete all temporary files you generated, along with any outputs, and
-2. rerun the analysis/code as though you just downloaded. 
+1. Delete all temporary and output files you generated, restart the kernal (and clear output), 
+2. rerun the analysis/code (as though you just started from scratch),
+3. and save your notebook file when it's done running. 
 
 This will clean up your folder for viewers (yay, professional work product!) and is a first pass at finding out if your code "works from scratch".
 
@@ -115,14 +116,16 @@ Use relative path references instead. For example, if `main_analysis.py` uses `e
 
 ```{dropdown}  **TIP #4:** Make it easy for others to see the source code that executes the analysis as well as the report. 
 The biggies:
-1. The README.md in the main directory is what they will see first when they open it. Make it professional and helpful!  GitHub can format "Markdown" nicely, with headers, links, media, and more and will show visitors this. Create annotated links to documents graders need to access. You should point them to your main Jupyter file, which GitHub will also render!
-2. Make sure your final analysis code shows outputs _when viewed online_! This will help them grade faster (and faster graders are nicer graders).
+1. The README.md in the main directory is what they will see first when they open it. Make it professional and helpful!  GitHub can format "Markdown" nicely, with headers, links, media, and more and will show visitors this. 
+    - Create annotated links to documents graders need to access. For example, point them to your main Jupyter file, which GitHub will also render so that visitors see the output on the website without needing to run code!
+    - [GitHub](https://guides.github.com/features/wikis/#Formatting-a-readme) suggests including the project name, a clear and short description (what it does and why it is important), installation tips (list packages they might need to install), and usage instructions.
+2. Make sure your final analysis code shows outputs _when viewed online_! See Tip #2 above. This will help them grade faster (and faster graders are nicer graders).
 ```
 
 
 ```{dropdown}  **TIP #5:** Make it easy for others to run your code.
 - At the top of the code, load all packages you need
-- Under that, list parameters a user would set (you obviously choose these during your analysis, but it's nice to see quickly and wholly)
+- Under that, list parameters a user would set (you obviously choose these during your analysis, but it's nice to see them quickly in one place)
 - Under that, import external files. This makes it easy for someone to see which data files are required and edit the paths if necessary. Even though I said absolute path references are bad above, there are situations where you might not keep data in the repo itself. (For example: Huge data files or sensitive data subject to privacy issues.) When this is the case and you have to use absolute path references, you want those at the top of your code so people see them!
 - Again, see tip #3 above.
 ```
